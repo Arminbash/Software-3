@@ -37,6 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnSig = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -118,11 +119,22 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(876, 27);
+            this.panel1.TabIndex = 10;
+            // 
             // frmRellenarEmpresa
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(876, 409);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSig);
             this.Controls.Add(this.txtNombreUsuario);
@@ -153,5 +165,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSig;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
