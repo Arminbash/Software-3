@@ -7,3 +7,4 @@ C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5
 C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.csproj.GenerateResource.Cache
 C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.exe
 C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.pdb
+C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.frmRellenarEmpresa.resources

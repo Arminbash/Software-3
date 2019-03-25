@@ -23,7 +23,12 @@ namespace Cobit_5
         }
         private void btnSig_Click(object sender, EventArgs e)
         {
-
+           frmRellenarEmpresa rEmpresa = new frmRellenarEmpresa();
+           rEmpresa.ShowDialog(this);
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+           this.Close();
         }
     }
 }
