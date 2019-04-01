@@ -37,11 +37,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnSig = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-
             this.panel1 = new System.Windows.Forms.Panel();
-
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-
             this.SuspendLayout();
             // 
             // label1
@@ -109,6 +106,7 @@
             this.btnSig.TabIndex = 8;
             this.btnSig.Text = "SIGUIENTE";
             this.btnSig.UseVisualStyleBackColor = true;
+            this.btnSig.Click += new System.EventHandler(this.btnSig_Click);
             // 
             // button1
             // 
@@ -123,7 +121,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
@@ -133,7 +130,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(876, 27);
             this.panel1.TabIndex = 10;
-
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -144,18 +141,14 @@
             this.checkBox1.TabIndex = 10;
             this.checkBox1.Text = "Usar contraseña?";
             this.checkBox1.UseVisualStyleBackColor = true;
-
             // 
             // frmRellenarEmpresa
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(876, 409);
-
             this.Controls.Add(this.panel1);
-
             this.Controls.Add(this.checkBox1);
-
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSig);
             this.Controls.Add(this.txtNombreUsuario);

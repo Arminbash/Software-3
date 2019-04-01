@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Cobit_5.Procesos;
 
 namespace Cobit_5
 {
@@ -20,6 +21,13 @@ namespace Cobit_5
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSig_Click(object sender, EventArgs e)
+        {
+            frmListaProcesos frmProcesos = new frmListaProcesos();
+            frmProcesos.ShowDialog(this);
+            this.Visible = false;
         }
     }
 }
