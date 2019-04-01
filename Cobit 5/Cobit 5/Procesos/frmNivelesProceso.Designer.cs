@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnN1 = new System.Windows.Forms.Button();
             this.btN2 = new System.Windows.Forms.Button();
             this.btN3 = new System.Windows.Forms.Button();
@@ -43,6 +44,17 @@
             this.lblN5 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtIdentificador = new System.Windows.Forms.TextBox();
+            this.grdProcesos1 = new System.Windows.Forms.DataGridView();
+            this.Criterio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seCumple = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Comentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noConseguido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Parcialmente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParteConseguido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Totalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPropositoNivel = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProcesos1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnN1
@@ -54,6 +66,7 @@
             this.btnN1.TabIndex = 8;
             this.btnN1.Text = "Nivel 1";
             this.btnN1.UseVisualStyleBackColor = true;
+            this.btnN1.Click += new System.EventHandler(this.btnN1_Click);
             // 
             // btN2
             // 
@@ -193,11 +206,110 @@
             this.txtIdentificador.Size = new System.Drawing.Size(176, 22);
             this.txtIdentificador.TabIndex = 22;
             // 
+            // grdProcesos1
+            // 
+            this.grdProcesos1.AllowUserToAddRows = false;
+            this.grdProcesos1.AllowUserToDeleteRows = false;
+            this.grdProcesos1.BackgroundColor = System.Drawing.Color.White;
+            this.grdProcesos1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdProcesos1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Criterio,
+            this.seCumple,
+            this.Comentario,
+            this.noConseguido,
+            this.Parcialmente,
+            this.ParteConseguido,
+            this.Totalidad});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdProcesos1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.grdProcesos1.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.grdProcesos1.Location = new System.Drawing.Point(12, 285);
+            this.grdProcesos1.MultiSelect = false;
+            this.grdProcesos1.Name = "grdProcesos1";
+            this.grdProcesos1.Size = new System.Drawing.Size(917, 339);
+            this.grdProcesos1.TabIndex = 23;
+            // 
+            // Criterio
+            // 
+            this.Criterio.DataPropertyName = "Criterio";
+            this.Criterio.HeaderText = "Criterio";
+            this.Criterio.Name = "Criterio";
+            this.Criterio.ReadOnly = true;
+            this.Criterio.Width = 200;
+            // 
+            // seCumple
+            // 
+            this.seCumple.DataPropertyName = "seCumple";
+            this.seCumple.HeaderText = "seCumple";
+            this.seCumple.Name = "seCumple";
+            this.seCumple.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.seCumple.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Comentario
+            // 
+            this.Comentario.DataPropertyName = "Comentario";
+            this.Comentario.HeaderText = "Comentario";
+            this.Comentario.Name = "Comentario";
+            this.Comentario.Width = 200;
+            // 
+            // noConseguido
+            // 
+            this.noConseguido.DataPropertyName = "noConseguido";
+            this.noConseguido.HeaderText = "noConseguido";
+            this.noConseguido.Name = "noConseguido";
+            // 
+            // Parcialmente
+            // 
+            this.Parcialmente.DataPropertyName = "Parcialmente";
+            this.Parcialmente.HeaderText = "Parcialmente";
+            this.Parcialmente.Name = "Parcialmente";
+            // 
+            // ParteConseguido
+            // 
+            this.ParteConseguido.DataPropertyName = "ParteConseguido";
+            this.ParteConseguido.HeaderText = "ParteConseguido";
+            this.ParteConseguido.Name = "ParteConseguido";
+            // 
+            // Totalidad
+            // 
+            this.Totalidad.DataPropertyName = "Totalidad";
+            this.Totalidad.HeaderText = "Totalidad";
+            this.Totalidad.Name = "Totalidad";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(25, 197);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(198, 24);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Proposito del nivel";
+            // 
+            // txtPropositoNivel
+            // 
+            this.txtPropositoNivel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPropositoNivel.Location = new System.Drawing.Point(229, 200);
+            this.txtPropositoNivel.Multiline = true;
+            this.txtPropositoNivel.Name = "txtPropositoNivel";
+            this.txtPropositoNivel.ReadOnly = true;
+            this.txtPropositoNivel.Size = new System.Drawing.Size(683, 79);
+            this.txtPropositoNivel.TabIndex = 25;
+            // 
             // frmNivelesProceso
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(941, 636);
+            this.Controls.Add(this.txtPropositoNivel);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.grdProcesos1);
             this.Controls.Add(this.txtIdentificador);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblN5);
@@ -220,6 +332,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Niveles del Proceso";
             this.Load += new System.EventHandler(this.frmNivelesProceso_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grdProcesos1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +355,15 @@
         private System.Windows.Forms.Label lblN5;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtIdentificador;
+        private System.Windows.Forms.DataGridView grdProcesos1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Criterio;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn seCumple;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Comentario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noConseguido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Parcialmente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ParteConseguido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Totalidad;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtPropositoNivel;
     }
 }

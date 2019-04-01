@@ -15,5 +15,6 @@ namespace Cobit_5.Clases_Modelo
         public string N3 { get; set; }
         public string N4 { get; set; }
         public string N5 { get; set; }
+        public virtual ICollection<Nivel> Niveles { get; set; }
     }
 }

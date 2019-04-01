@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases Modelo\CriterioProceso.cs" />
+    <Compile Include="Clases Modelo\Nivel.cs" />
     <Compile Include="Clases Modelo\Proceso.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
