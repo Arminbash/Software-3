@@ -10,6 +10,7 @@ namespace Cobit_5.Clases_Modelo
     {
         public string idProceso { get; set; }
         public string NombreProceso { get; set; }
+        public string N0 { get; set; }
         public string N1 { get; set; }
         public string N2 { get; set; }
         public string N3 { get; set; }

@@ -38,12 +38,19 @@ namespace Cobit_5.Procesos
         {
             // aqui se configura el nivel y su proposito
             nivelAct.idProceso = "EDM01";
-            nivelAct.Proposito = "Proporcionar un enfoque coherente integrado y alineado con el enfoque de gobierno de la empresa. Para asegurar que los relacionados con las TI las decisiones se toman de acuerdo con las estrategias y objetivos de la empresa, aseguran que los procesos relacionados con las TI son supervisados ​​con eficacia y transparencia, el cumplimiento de los requisitos legales y reglamentarios se confirma, y ​​se cumplen los requisitos de gobierno de los miembros del consejo.";
+            nivelAct.Proposito = "Proporcionar un enfoque coherente integrado y alineado " +
+                                 "con el enfoque de gobierno de la empresa. Para asegurar que los relacionados " +
+                                 "con las TI las decisiones se toman de acuerdo con las estrategias y objetivos de " +
+                                 "la empresa, aseguran que los procesos relacionados con las TI son supervisados ​​con " +
+                                 "eficacia y transparencia, el cumplimiento de los requisitos legales y reglamentarios " +
+                                 "se confirma, y ​​se cumplen los requisitos de gobierno de los miembros del consejo.";
             //esta es la lista que se le otorgara a un datasource
             List<CriterioProceso> ListCrit = new List<CriterioProceso>();
             //se llena la lista con criterios
             CriterioProceso crit = new CriterioProceso();
-            crit.Criterio = "EDM01-O1 Estratégica modelo de toma de decisiones de TI es eficaz y alineado con los requisitos ambientales y de grupos de interés internos y externos de la empresa.";
+            crit.Criterio = "EDM01-O1 Estratégica modelo de toma de decisiones de TI " +
+                            "es eficaz y alineado con los requisitos ambientales y de grupos de interés internos y " +
+                            "externos de la empresa.";
             crit.seCumple = false;
             crit.Comentario = "";
             crit.noConseguido = 0;

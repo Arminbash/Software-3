@@ -6,17 +6,7 @@ C:\Users\Francisco Rios\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\Co
 C:\Users\Francisco Rios\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.csprojResolveAssemblyReference.cache
 C:\Users\Francisco Rios\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.frmPrincipal.resources
 C:\Users\Francisco Rios\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.frmRellenarEmpresa.resources
+C:\Users\Francisco Rios\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Procesos.frmListaProcesos.resources
+C:\Users\Francisco Rios\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Procesos.frmNivelesProceso.resources
 C:\Users\Francisco Rios\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Properties.Resources.resources
 C:\Users\Francisco Rios\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.csproj.GenerateResource.Cache
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.exe
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\Cobit 5.exe.config
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\Cobit 5.exe
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\Cobit 5.pdb
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.csprojResolveAssemblyReference.cache
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.frmPrincipal.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.frmRellenarEmpresa.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Procesos.frmListaProcesos.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Properties.Resources.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.csproj.GenerateResource.Cache
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.pdb
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Procesos.frmNivelesProceso.resources
