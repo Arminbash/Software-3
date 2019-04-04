@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnN1 = new System.Windows.Forms.Button();
             this.btN2 = new System.Windows.Forms.Button();
             this.btN3 = new System.Windows.Forms.Button();
@@ -54,13 +54,15 @@
             this.Totalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPropositoNivel = new System.Windows.Forms.TextBox();
+            this.btnN0 = new System.Windows.Forms.Button();
+            this.lblN0 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdProcesos1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnN1
             // 
             this.btnN1.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnN1.Location = new System.Drawing.Point(159, 86);
+            this.btnN1.Location = new System.Drawing.Point(289, 86);
             this.btnN1.Name = "btnN1";
             this.btnN1.Size = new System.Drawing.Size(96, 61);
             this.btnN1.TabIndex = 8;
@@ -71,37 +73,40 @@
             // btN2
             // 
             this.btN2.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btN2.Location = new System.Drawing.Point(294, 86);
+            this.btN2.Location = new System.Drawing.Point(407, 86);
             this.btN2.Name = "btN2";
             this.btN2.Size = new System.Drawing.Size(96, 61);
             this.btN2.TabIndex = 9;
             this.btN2.Text = "Nivel 2";
             this.btN2.UseVisualStyleBackColor = true;
+            this.btN2.Click += new System.EventHandler(this.btN2_Click);
             // 
             // btN3
             // 
             this.btN3.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btN3.Location = new System.Drawing.Point(431, 86);
+            this.btN3.Location = new System.Drawing.Point(523, 86);
             this.btN3.Name = "btN3";
             this.btN3.Size = new System.Drawing.Size(96, 61);
             this.btN3.TabIndex = 10;
             this.btN3.Text = "Nivel 3";
             this.btN3.UseVisualStyleBackColor = true;
+            this.btN3.Click += new System.EventHandler(this.btN3_Click);
             // 
             // btnN4
             // 
             this.btnN4.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnN4.Location = new System.Drawing.Point(557, 86);
+            this.btnN4.Location = new System.Drawing.Point(635, 86);
             this.btnN4.Name = "btnN4";
             this.btnN4.Size = new System.Drawing.Size(96, 61);
             this.btnN4.TabIndex = 11;
             this.btnN4.Text = "Nivel 4";
             this.btnN4.UseVisualStyleBackColor = true;
+            this.btnN4.Click += new System.EventHandler(this.btnN4_Click);
             // 
             // btnN5
             // 
             this.btnN5.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnN5.Location = new System.Drawing.Point(706, 86);
+            this.btnN5.Location = new System.Drawing.Point(750, 86);
             this.btnN5.Name = "btnN5";
             this.btnN5.Size = new System.Drawing.Size(96, 61);
             this.btnN5.TabIndex = 12;
@@ -142,17 +147,18 @@
             // 
             this.lblN1.AutoSize = true;
             this.lblN1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblN1.Location = new System.Drawing.Point(188, 164);
+            this.lblN1.Location = new System.Drawing.Point(326, 164);
             this.lblN1.Name = "lblN1";
             this.lblN1.Size = new System.Drawing.Size(22, 24);
             this.lblN1.TabIndex = 16;
             this.lblN1.Text = "0";
+            this.lblN1.Click += new System.EventHandler(this.lblN1_Click);
             // 
             // lblN2
             // 
             this.lblN2.AutoSize = true;
             this.lblN2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblN2.Location = new System.Drawing.Point(330, 164);
+            this.lblN2.Location = new System.Drawing.Point(448, 164);
             this.lblN2.Name = "lblN2";
             this.lblN2.Size = new System.Drawing.Size(22, 24);
             this.lblN2.TabIndex = 17;
@@ -162,17 +168,18 @@
             // 
             this.lblN3.AutoSize = true;
             this.lblN3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblN3.Location = new System.Drawing.Point(461, 164);
+            this.lblN3.Location = new System.Drawing.Point(566, 164);
             this.lblN3.Name = "lblN3";
             this.lblN3.Size = new System.Drawing.Size(22, 24);
             this.lblN3.TabIndex = 18;
             this.lblN3.Text = "0";
+            this.lblN3.Click += new System.EventHandler(this.lblN3_Click);
             // 
             // lblN4
             // 
             this.lblN4.AutoSize = true;
             this.lblN4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblN4.Location = new System.Drawing.Point(594, 164);
+            this.lblN4.Location = new System.Drawing.Point(667, 164);
             this.lblN4.Name = "lblN4";
             this.lblN4.Size = new System.Drawing.Size(22, 24);
             this.lblN4.TabIndex = 19;
@@ -182,7 +189,7 @@
             // 
             this.lblN5.AutoSize = true;
             this.lblN5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblN5.Location = new System.Drawing.Point(746, 164);
+            this.lblN5.Location = new System.Drawing.Point(791, 164);
             this.lblN5.Name = "lblN5";
             this.lblN5.Size = new System.Drawing.Size(22, 24);
             this.lblN5.TabIndex = 20;
@@ -220,14 +227,14 @@
             this.Parcialmente,
             this.ParteConseguido,
             this.Totalidad});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdProcesos1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdProcesos1.DefaultCellStyle = dataGridViewCellStyle3;
             this.grdProcesos1.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.grdProcesos1.Location = new System.Drawing.Point(12, 285);
             this.grdProcesos1.MultiSelect = false;
@@ -302,11 +309,34 @@
             this.txtPropositoNivel.Size = new System.Drawing.Size(683, 79);
             this.txtPropositoNivel.TabIndex = 25;
             // 
+            // btnN0
+            // 
+            this.btnN0.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnN0.Location = new System.Drawing.Point(174, 86);
+            this.btnN0.Name = "btnN0";
+            this.btnN0.Size = new System.Drawing.Size(96, 61);
+            this.btnN0.TabIndex = 26;
+            this.btnN0.Text = "Nivel 0";
+            this.btnN0.UseVisualStyleBackColor = true;
+            this.btnN0.Click += new System.EventHandler(this.btnN0_Click);
+            // 
+            // lblN0
+            // 
+            this.lblN0.AutoSize = true;
+            this.lblN0.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblN0.Location = new System.Drawing.Point(214, 164);
+            this.lblN0.Name = "lblN0";
+            this.lblN0.Size = new System.Drawing.Size(22, 24);
+            this.lblN0.TabIndex = 27;
+            this.lblN0.Text = "0";
+            // 
             // frmNivelesProceso
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(941, 636);
+            this.Controls.Add(this.lblN0);
+            this.Controls.Add(this.btnN0);
             this.Controls.Add(this.txtPropositoNivel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.grdProcesos1);
@@ -365,5 +395,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Totalidad;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPropositoNivel;
+        private System.Windows.Forms.Button btnN0;
+        private System.Windows.Forms.Label lblN0;
     }
 }

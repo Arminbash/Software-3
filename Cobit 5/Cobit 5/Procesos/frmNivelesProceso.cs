@@ -33,12 +33,32 @@ namespace Cobit_5.Procesos
                 lblN5.Text = proceso.N5;
             }
         }
+
+
+
+        private List<CriterioProceso> Nivel0()
+        {
+            nivelAct.idProceso = "EDM01";
+            nivelAct.Proposito = "El proceso no se lleva a cabo, o no lograr su propósito proceso. ";
+
+            List<CriterioProceso> ListCrit = new List<CriterioProceso>();
+            CriterioProceso crit = new CriterioProceso();
+            crit.Criterio = "En este nivel, hay poca o ninguna evidencia de cualquier logro del propósito del proceso.";
+            crit.seCumple = false;
+            crit.Comentario = "";
+            crit.noConseguido = 0;
+            crit.Parcialmente = 0;
+            crit.ParteConseguido = 0;
+            crit.Totalidad = 0;
+            ListCrit.Add(crit);
+            return ListCrit;
+        }
         //se pondran todos los criterios del nivel 1 aqui
         private List<CriterioProceso> Nivel1()
         {
             // aqui se configura el nivel y su proposito
             nivelAct.idProceso = "EDM01";
-            nivelAct.Proposito = "Proporcionar un enfoque coherente integrado y alineado con el enfoque de gobierno de la empresa. Para asegurar que los relacionados con las TI las decisiones se toman de acuerdo con las estrategias y objetivos de la empresa, aseguran que los procesos relacionados con las TI son supervisados ​​con eficacia y transparencia, el cumplimiento de los requisitos legales y reglamentarios se confirma, y ​​se cumplen los requisitos de gobierno de los miembros del consejo.";
+            nivelAct.Proposito = "PA 1.1 El proceso implementado logra su propósito proceso.";
             //esta es la lista que se le otorgara a un datasource
             List<CriterioProceso> ListCrit = new List<CriterioProceso>();
             //se llena la lista con criterios
@@ -75,10 +95,109 @@ namespace Cobit_5.Procesos
             return ListCrit;//aqui se retorna todos loscriterios del nivel 1
         }
 
+        private List<CriterioProceso> Nivel2()
+        {
+            nivelAct.idProceso = "EDM01";
+            nivelAct.Proposito = "PA 2.1 Administración de Rendimiento - Una medida del grado en que se gestiona el rendimiento del proceso.";
+
+            List<CriterioProceso> ListCrit = new List<CriterioProceso>();
+            CriterioProceso crit = new CriterioProceso();
+            crit.Criterio = "una)Se identifican objetivos para el rendimiento del proceso." +
+                            "segundo)El rendimiento del proceso es planificado y supervisado." +
+                            "El rendimiento del proceso se ajusta para satisfacer los planes."+
+                            "Responsabilidades y autoridades para la realización del proceso se definen, asignados y comunicados."+
+                            "mi)Resources y la información necesaria para realizar el proceso se identifican, ponen a disposición, asignados y utilizados."+
+                            "F)yonterfaces entre las partes involucradas son gestionados para asegurar tanto la comunicación efectiva y clara asignación de responsabilidades.";
+            crit.seCumple = false;
+
+            crit.Comentario = "";
+            crit.noConseguido = 0;
+            crit.Parcialmente = 0;
+            crit.ParteConseguido = 0;
+            crit.Totalidad = 0;
+            ListCrit.Add(crit);
+            return ListCrit;
+        }
+        private List<CriterioProceso> Nivel3()
+        {
+            nivelAct.idProceso = "EDM01";
+            nivelAct.Proposito = "PA 3.1 Definición del proceso - Una medida del grado en que un proceso estándar se mantiene para apoyar el despliegue del proceso definido.";
+            List<CriterioProceso> ListCrit = new List<CriterioProceso>();
+            CriterioProceso crit = new CriterioProceso();
+            crit.Criterio = "una)UNA proceso estándar, incluyendo guías de adaptación apropiadas, se define que describe los elementos fundamentales que deben ser incorporados en un proceso definido." +
+                            "segundo)Tque la secuencia y la interacción del proceso estándar con otros procesos se determina." +
+                            "do)competencias y funciones necesarias para la realización de un proceso se identifican como parte del proceso estándar." +
+                            "Responsabilidades y autoridades para la realización del proceso se definen, asignados y comunicados." +
+                           " mi)Sse determinan métodos uitable de control de eficacia e idoneidad del proceso.";
+            crit.seCumple = false;
+
+            crit.Comentario = "";
+            crit.noConseguido = 0;
+            crit.Parcialmente = 0;
+            crit.ParteConseguido = 0;
+            crit.Totalidad = 0;
+            ListCrit.Add(crit);
+            return ListCrit;
+        }
+        private List<CriterioProceso> Nivel4()
+        {
+            nivelAct.idProceso = "EDM01";
+            nivelAct.Proposito = "PA 3.1 Definición del proceso - Una medida del grado en que un proceso estándar se mantiene para apoyar el despliegue del proceso definido.";
+            List<CriterioProceso> ListCrit = new List<CriterioProceso>();
+            CriterioProceso crit = new CriterioProceso();
+            crit.Criterio = "una)UNA proceso estándar, incluyendo guías de adaptación apropiadas, se define que describe los elementos fundamentales que deben ser incorporados en un proceso definido." +
+                            "segundo)Tque la secuencia y la interacción del proceso estándar con otros procesos se determina." +
+                            "do)competencias y funciones necesarias para la realización de un proceso se identifican como parte del proceso estándar." +
+                            "Responsabilidades y autoridades para la realización del proceso se definen, asignados y comunicados." +
+                            " mi)Sse determinan métodos uitable de control de eficacia e idoneidad del proceso.";
+            crit.seCumple = false;
+
+            crit.Comentario = "";
+            crit.noConseguido = 0;
+            crit.Parcialmente = 0;
+            crit.ParteConseguido = 0;
+            crit.Totalidad = 0;
+            ListCrit.Add(crit);
+            return ListCrit;
+        }
+
         private void btnN1_Click(object sender, EventArgs e)
         {
             grdProcesos1.DataSource = Nivel1();//cuando se de click en el boton se cargan todo los criterios del nivel
             txtPropositoNivel.Text = nivelAct.Proposito; // aqui le decimos que carge el proposito del nivel
         }
-}
+
+        private void btN2_Click(object sender, EventArgs e)
+        {
+            grdProcesos1.DataSource = Nivel2();
+            txtPropositoNivel.Text = nivelAct.Proposito; //
+        }
+
+        private void btnN4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblN3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblN1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnN0_Click(object sender, EventArgs e)
+        {
+            grdProcesos1.DataSource = Nivel0();
+            txtPropositoNivel.Text = nivelAct.Proposito; //
+        }
+
+        private void btN3_Click(object sender, EventArgs e)
+        {
+            grdProcesos1.DataSource = Nivel3();
+            txtPropositoNivel.Text = nivelAct.Proposito; //
+        }
+    }
 }
