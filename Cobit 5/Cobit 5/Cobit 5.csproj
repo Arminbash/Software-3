@@ -32,8 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +56,54 @@
     <Compile Include="Clases Modelo\CriterioProceso.cs" />
     <Compile Include="Clases Modelo\Nivel.cs" />
     <Compile Include="Clases Modelo\Proceso.cs" />
+    <Compile Include="Datos\Criterio.cs">
+      <DependentUpon>software3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\CriterioEmpresa.cs">
+      <DependentUpon>software3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\DatosEmpresa.cs">
+      <DependentUpon>software3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\DatosUsuario.cs">
+      <DependentUpon>software3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\Nivel.cs">
+      <DependentUpon>software3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\Proceso.cs">
+      <DependentUpon>software3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\ProcesoEmpresa.cs">
+      <DependentUpon>software3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\PropositoNivel.cs">
+      <DependentUpon>software3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\software3.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>software3.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\software3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>software3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\software3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>software3.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>software3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\sp_helpdiagrams_Result.cs">
+      <DependentUpon>software3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\sysdiagrams.cs">
+      <DependentUpon>software3.tt</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +116,7 @@
     <Compile Include="frmRellenarEmpresa.Designer.cs">
       <DependentUpon>frmRellenarEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Metodos\D_Procesos.cs" />
     <Compile Include="Procesos\frmListaProcesos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +153,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="Datos\software3.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>software3.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Datos\software3.edmx.diagram">
+      <DependentUpon>software3.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -110,6 +176,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo_uni_610x377.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Datos\software3.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>software3.edmx</DependentUpon>
+      <LastGenOutput>software3.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Datos\software3.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>software3.edmx</DependentUpon>
+      <LastGenOutput>software3.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

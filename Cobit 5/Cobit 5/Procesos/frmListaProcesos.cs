@@ -418,7 +418,8 @@ namespace Cobit_5.Procesos
         }
         private void frmListaProcesos_Load(object sender, EventArgs e)
         {
-            grdProcesos1.DataSource = RellenarLista1();
+            Metodos.D_Procesos metodosProcesos = new Metodos.D_Procesos();
+            grdProcesos1.DataSource = metodosProcesos.ObtenerProcesosXText("EDM");
             grdProcesos2.DataSource = RellenarLista2();
             grdProcesos3.DataSource = RellenarLista3();
             grdProcesos4.DataSource = RellenarLista4();

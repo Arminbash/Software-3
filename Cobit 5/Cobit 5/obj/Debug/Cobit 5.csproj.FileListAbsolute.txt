@@ -10,3 +10,19 @@ C:\Users\Francisco Rios\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Co
 C:\Users\Francisco Rios\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Procesos.frmNivelesProceso.resources
 C:\Users\Francisco Rios\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Properties.Resources.resources
 C:\Users\Francisco Rios\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.csproj.GenerateResource.Cache
+C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\Cobit 5.exe.config
+C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\Cobit 5.exe
+C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\Cobit 5.pdb
+C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\EntityFramework.dll
+C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\EntityFramework.xml
+C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.frmPrincipal.resources
+C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.frmRellenarEmpresa.resources
+C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Procesos.frmListaProcesos.resources
+C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Procesos.frmNivelesProceso.resources
+C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.csproj.GenerateResource.Cache
+C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.exe
+C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.pdb

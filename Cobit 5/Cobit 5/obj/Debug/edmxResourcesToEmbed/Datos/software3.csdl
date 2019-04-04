@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Software3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Criterio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdNivel" Type="Int32" />
+    <Property Name="DetalleCriterio" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Estatus" Type="Boolean" />
+    <NavigationProperty Name="Nivel" Relationship="Self.FK__Criterio__IdNive__32E0915F" FromRole="Criterio" ToRole="Nivel" />
+    <NavigationProperty Name="CriterioEmpresa" Relationship="Self.FK__CriterioE__IdCri__35BCFE0A" FromRole="Criterio" ToRole="CriterioEmpresa" />
+  </EntityType>
+  <EntityType Name="CriterioEmpresa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCriterio" Type="Int32" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="SeCumple" Type="Boolean" />
+    <Property Name="Comentario" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="NoConseguido" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Parcialmente" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ParteConseguido" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Totalidad" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Estatus" Type="Boolean" />
+    <NavigationProperty Name="Criterio" Relationship="Self.FK__CriterioE__IdCri__35BCFE0A" FromRole="CriterioEmpresa" ToRole="Criterio" />
+    <NavigationProperty Name="DatosEmpresa" Relationship="Self.FK__CriterioE__IdEmp__36B12243" FromRole="CriterioEmpresa" ToRole="DatosEmpresa" />
+  </EntityType>
+  <EntityType Name="DatosEmpresa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Proposito" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Estatus" Type="Boolean" />
+    <NavigationProperty Name="CriterioEmpresa" Relationship="Self.FK__CriterioE__IdEmp__36B12243" FromRole="DatosEmpresa" ToRole="CriterioEmpresa" />
+    <NavigationProperty Name="ProcesoEmpresa" Relationship="Self.FK__ProcesoEm__IdEmp__2A4B4B5E" FromRole="DatosEmpresa" ToRole="ProcesoEmpresa" />
+  </EntityType>
+  <EntityType Name="DatosUsuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Estatus" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Nivel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProceso" Type="Int32" />
+    <Property Name="CodigoNivel" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Detalles" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Estatus" Type="Boolean" />
+    <NavigationProperty Name="Criterio" Relationship="Self.FK__Criterio__IdNive__32E0915F" FromRole="Nivel" ToRole="Criterio" />
+    <NavigationProperty Name="Proceso" Relationship="Self.FK__Nivel__IdProceso__2D27B809" FromRole="Nivel" ToRole="Proceso" />
+    <NavigationProperty Name="PropositoNivel" Relationship="Self.FK__Proposito__IdNiv__300424B4" FromRole="Nivel" ToRole="PropositoNivel" />
+  </EntityType>
+  <EntityType Name="Proceso">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodigoProceso" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="NombreProceso" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="PropositoProceso" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Estatus" Type="Boolean" />
+    <NavigationProperty Name="Nivel" Relationship="Self.FK__Nivel__IdProceso__2D27B809" FromRole="Proceso" ToRole="Nivel" />
+    <NavigationProperty Name="ProcesoEmpresa" Relationship="Self.FK__ProcesoEm__IdPro__29572725" FromRole="Proceso" ToRole="ProcesoEmpresa" />
+  </EntityType>
+  <EntityType Name="ProcesoEmpresa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProceso" Type="Int32" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="Nivel0" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Nivel1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Nivel2" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Nivel3" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Nivel4" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Nivel5" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Estatus" Type="Boolean" />
+    <NavigationProperty Name="DatosEmpresa" Relationship="Self.FK__ProcesoEm__IdEmp__2A4B4B5E" FromRole="ProcesoEmpresa" ToRole="DatosEmpresa" />
+    <NavigationProperty Name="Proceso" Relationship="Self.FK__ProcesoEm__IdPro__29572725" FromRole="ProcesoEmpresa" ToRole="Proceso" />
+  </EntityType>
+  <EntityType Name="PropositoNivel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdNivel" Type="Int32" />
+    <Property Name="Proposito" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Estatus" Type="Boolean" />
+    <NavigationProperty Name="Nivel" Relationship="Self.FK__Proposito__IdNiv__300424B4" FromRole="PropositoNivel" ToRole="Nivel" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK__Criterio__IdNive__32E0915F">
+    <End Role="Nivel" Type="Self.Nivel" Multiplicity="0..1" />
+    <End Role="Criterio" Type="Self.Criterio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nivel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Criterio">
+        <PropertyRef Name="IdNivel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CriterioE__IdCri__35BCFE0A">
+    <End Role="Criterio" Type="Self.Criterio" Multiplicity="0..1" />
+    <End Role="CriterioEmpresa" Type="Self.CriterioEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Criterio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CriterioEmpresa">
+        <PropertyRef Name="IdCriterio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CriterioE__IdEmp__36B12243">
+    <End Role="DatosEmpresa" Type="Self.DatosEmpresa" Multiplicity="0..1" />
+    <End Role="CriterioEmpresa" Type="Self.CriterioEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DatosEmpresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CriterioEmpresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProcesoEm__IdEmp__2A4B4B5E">
+    <End Role="DatosEmpresa" Type="Self.DatosEmpresa" Multiplicity="0..1" />
+    <End Role="ProcesoEmpresa" Type="Self.ProcesoEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DatosEmpresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProcesoEmpresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Nivel__IdProceso__2D27B809">
+    <End Role="Proceso" Type="Self.Proceso" Multiplicity="0..1" />
+    <End Role="Nivel" Type="Self.Nivel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proceso">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Nivel">
+        <PropertyRef Name="IdProceso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Proposito__IdNiv__300424B4">
+    <End Role="Nivel" Type="Self.Nivel" Multiplicity="0..1" />
+    <End Role="PropositoNivel" Type="Self.PropositoNivel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nivel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PropositoNivel">
+        <PropertyRef Name="IdNivel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProcesoEm__IdPro__29572725">
+    <End Role="Proceso" Type="Self.Proceso" Multiplicity="0..1" />
+    <End Role="ProcesoEmpresa" Type="Self.ProcesoEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proceso">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProcesoEmpresa">
+        <PropertyRef Name="IdProceso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Software3Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Criterio" EntityType="Self.Criterio" />
+    <EntitySet Name="CriterioEmpresa" EntityType="Self.CriterioEmpresa" />
+    <EntitySet Name="DatosEmpresa" EntityType="Self.DatosEmpresa" />
+    <EntitySet Name="DatosUsuario" EntityType="Self.DatosUsuario" />
+    <EntitySet Name="Nivel" EntityType="Self.Nivel" />
+    <EntitySet Name="Proceso" EntityType="Self.Proceso" />
+    <EntitySet Name="ProcesoEmpresa" EntityType="Self.ProcesoEmpresa" />
+    <EntitySet Name="PropositoNivel" EntityType="Self.PropositoNivel" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK__Criterio__IdNive__32E0915F" Association="Self.FK__Criterio__IdNive__32E0915F">
+      <End Role="Nivel" EntitySet="Nivel" />
+      <End Role="Criterio" EntitySet="Criterio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CriterioE__IdCri__35BCFE0A" Association="Self.FK__CriterioE__IdCri__35BCFE0A">
+      <End Role="Criterio" EntitySet="Criterio" />
+      <End Role="CriterioEmpresa" EntitySet="CriterioEmpresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CriterioE__IdEmp__36B12243" Association="Self.FK__CriterioE__IdEmp__36B12243">
+      <End Role="DatosEmpresa" EntitySet="DatosEmpresa" />
+      <End Role="CriterioEmpresa" EntitySet="CriterioEmpresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProcesoEm__IdEmp__2A4B4B5E" Association="Self.FK__ProcesoEm__IdEmp__2A4B4B5E">
+      <End Role="DatosEmpresa" EntitySet="DatosEmpresa" />
+      <End Role="ProcesoEmpresa" EntitySet="ProcesoEmpresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Nivel__IdProceso__2D27B809" Association="Self.FK__Nivel__IdProceso__2D27B809">
+      <End Role="Proceso" EntitySet="Proceso" />
+      <End Role="Nivel" EntitySet="Nivel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Proposito__IdNiv__300424B4" Association="Self.FK__Proposito__IdNiv__300424B4">
+      <End Role="Nivel" EntitySet="Nivel" />
+      <End Role="PropositoNivel" EntitySet="PropositoNivel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProcesoEm__IdPro__29572725" Association="Self.FK__ProcesoEm__IdPro__29572725">
+      <End Role="Proceso" EntitySet="Proceso" />
+      <End Role="ProcesoEmpresa" EntitySet="ProcesoEmpresa" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Software3Model.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Software3Model.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

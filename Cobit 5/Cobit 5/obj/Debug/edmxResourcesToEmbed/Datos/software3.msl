@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Software3ModelStoreContainer" CdmEntityContainer="Software3Entities">
+    <EntitySetMapping Name="Criterio">
+      <EntityTypeMapping TypeName="Software3Model.Criterio">
+        <MappingFragment StoreEntitySet="Criterio">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdNivel" ColumnName="IdNivel" />
+          <ScalarProperty Name="DetalleCriterio" ColumnName="DetalleCriterio" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CriterioEmpresa">
+      <EntityTypeMapping TypeName="Software3Model.CriterioEmpresa">
+        <MappingFragment StoreEntitySet="CriterioEmpresa">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdCriterio" ColumnName="IdCriterio" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="SeCumple" ColumnName="SeCumple" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="NoConseguido" ColumnName="NoConseguido" />
+          <ScalarProperty Name="Parcialmente" ColumnName="Parcialmente" />
+          <ScalarProperty Name="ParteConseguido" ColumnName="ParteConseguido" />
+          <ScalarProperty Name="Totalidad" ColumnName="Totalidad" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DatosEmpresa">
+      <EntityTypeMapping TypeName="Software3Model.DatosEmpresa">
+        <MappingFragment StoreEntitySet="DatosEmpresa">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Proposito" ColumnName="Proposito" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DatosUsuario">
+      <EntityTypeMapping TypeName="Software3Model.DatosUsuario">
+        <MappingFragment StoreEntitySet="DatosUsuario">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nivel">
+      <EntityTypeMapping TypeName="Software3Model.Nivel">
+        <MappingFragment StoreEntitySet="Nivel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdProceso" ColumnName="IdProceso" />
+          <ScalarProperty Name="CodigoNivel" ColumnName="CodigoNivel" />
+          <ScalarProperty Name="Detalles" ColumnName="Detalles" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proceso">
+      <EntityTypeMapping TypeName="Software3Model.Proceso">
+        <MappingFragment StoreEntitySet="Proceso">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodigoProceso" ColumnName="CodigoProceso" />
+          <ScalarProperty Name="NombreProceso" ColumnName="NombreProceso" />
+          <ScalarProperty Name="PropositoProceso" ColumnName="PropositoProceso" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProcesoEmpresa">
+      <EntityTypeMapping TypeName="Software3Model.ProcesoEmpresa">
+        <MappingFragment StoreEntitySet="ProcesoEmpresa">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdProceso" ColumnName="IdProceso" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="Nivel0" ColumnName="Nivel0" />
+          <ScalarProperty Name="Nivel1" ColumnName="Nivel1" />
+          <ScalarProperty Name="Nivel2" ColumnName="Nivel2" />
+          <ScalarProperty Name="Nivel3" ColumnName="Nivel3" />
+          <ScalarProperty Name="Nivel4" ColumnName="Nivel4" />
+          <ScalarProperty Name="Nivel5" ColumnName="Nivel5" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropositoNivel">
+      <EntityTypeMapping TypeName="Software3Model.PropositoNivel">
+        <MappingFragment StoreEntitySet="PropositoNivel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdNivel" ColumnName="IdNivel" />
+          <ScalarProperty Name="Proposito" ColumnName="Proposito" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Software3Model.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Software3Model.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Software3Model.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Software3Model.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Software3Model.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Software3Model.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Software3Model.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Software3Model.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Software3Model.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Software3Model.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>
