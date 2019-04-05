@@ -3,18 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cobit_5.Datos;
+
 namespace Cobit_5.Metodos
 {
    public class D_Procesos
     {
-        public List<Datos.Proceso> ObtenerProcesosXText (string Text)
+       public List<Clases_Modelo.Proceso> ObtenerProcesosXText(string Text)
         {
-            List<Datos.Proceso> Lista = new List<Datos.Proceso>();
-            using (var context = new Datos.Software3Entities())
+            using (var dbContext = new Software3Entities())
             {
-                Lista = context.Proceso.Where(x => x.CodigoProceso.StartsWith(Text)).ToList();
+                var query = (from n in dbContext.Proceso
+                             select new Clases_Modelo.Proceso()
+                    {
+                        idProceso = n.CodigoProceso,
+                        NombreProceso = n.NombreProceso,
+                        N0 = "0",
+                        N1 = "0",
+                        N2 = "0",
+                        N3 = "0",
+                        N4 = "0",
+                        N5 = "0"
+                    }).Where(x => x.idProceso.StartsWith(Text)).ToList();
+                return query;
             }
-            return Lista;
         }
     }
 }

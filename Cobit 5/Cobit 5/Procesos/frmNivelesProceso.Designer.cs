@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnN1 = new System.Windows.Forms.Button();
             this.btN2 = new System.Windows.Forms.Button();
             this.btN3 = new System.Windows.Forms.Button();
@@ -153,7 +153,6 @@
             this.lblN1.Size = new System.Drawing.Size(22, 24);
             this.lblN1.TabIndex = 16;
             this.lblN1.Text = "0";
-            this.lblN1.Click += new System.EventHandler(this.lblN1_Click);
             // 
             // lblN2
             // 
@@ -174,7 +173,6 @@
             this.lblN3.Size = new System.Drawing.Size(22, 24);
             this.lblN3.TabIndex = 18;
             this.lblN3.Text = "0";
-            this.lblN3.Click += new System.EventHandler(this.lblN3_Click);
             // 
             // lblN4
             // 
@@ -228,14 +226,14 @@
             this.Parcialmente,
             this.ParteConseguido,
             this.Totalidad});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdProcesos1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdProcesos1.DefaultCellStyle = dataGridViewCellStyle1;
             this.grdProcesos1.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.grdProcesos1.Location = new System.Drawing.Point(12, 285);
             this.grdProcesos1.MultiSelect = false;

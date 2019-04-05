@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cobit_5.Clases_Modelo;
+using Cobit_5.Metodos;
 
 namespace Cobit_5.Procesos
 {
@@ -33,9 +34,6 @@ namespace Cobit_5.Procesos
                 lblN5.Text = proceso.N5;
             }
         }
-
-
-
         private List<CriterioProceso> Nivel0()
         {
             nivelAct.idProceso = "EDM01";
@@ -101,7 +99,6 @@ namespace Cobit_5.Procesos
 
             return ListCrit;//aqui se retorna todos loscriterios del nivel 1
         }
-
         private List<CriterioProceso> Nivel2()
         {
             nivelAct.idProceso = "EDM01";
@@ -359,48 +356,56 @@ namespace Cobit_5.Procesos
 
         private void btnN1_Click(object sender, EventArgs e)
         {
-            grdProcesos1.DataSource = Nivel1();//cuando se de click en el boton se cargan todo los criterios del nivel
-            txtPropositoNivel.Text = nivelAct.Proposito; // aqui le decimos que carge el proposito del nivel
+            //grdProcesos1.DataSource = Nivel1();//cuando se de click en el boton se cargan todo los criterios del nivel
+            //txtPropositoNivel.Text = nivelAct.Proposito; // aqui le decimos que carge el proposito del nivel
+            D_Nivel dNivel= new D_Nivel();
+            grdProcesos1.DataSource = dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 1");
+            txtPropositoNivel.Text = dNivel.ObtenerPropositoXNivel(1);
         }
 
         private void btN2_Click(object sender, EventArgs e)
         {
-            grdProcesos1.DataSource = Nivel2();
-            txtPropositoNivel.Text = nivelAct.Proposito; //
+            //grdProcesos1.DataSource = Nivel2();
+            //txtPropositoNivel.Text = nivelAct.Proposito; //
+            D_Nivel dNivel = new D_Nivel();
+            grdProcesos1.DataSource = dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 2");
+            txtPropositoNivel.Text = dNivel.ObtenerPropositoXNivel(2);
         }
 
         private void btnN4_Click(object sender, EventArgs e)
         {
-            grdProcesos1.DataSource = Nivel4();
-            txtPropositoNivel.Text = nivelAct.Proposito; //
-        }
-
-        private void lblN3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblN1_Click(object sender, EventArgs e)
-        {
-
+            //grdProcesos1.DataSource = Nivel4();
+            //txtPropositoNivel.Text = nivelAct.Proposito; //
+            D_Nivel dNivel = new D_Nivel();
+            grdProcesos1.DataSource = dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 4");
+            txtPropositoNivel.Text = dNivel.ObtenerPropositoXNivel(4);
         }
 
         private void btnN0_Click(object sender, EventArgs e)
         {
-            grdProcesos1.DataSource = Nivel0();
-            txtPropositoNivel.Text = nivelAct.Proposito; //
+            //grdProcesos1.DataSource = Nivel0();
+            //txtPropositoNivel.Text = nivelAct.Proposito; //
+            D_Nivel dNivel = new D_Nivel();
+            grdProcesos1.DataSource = dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 0");
+            txtPropositoNivel.Text = dNivel.ObtenerPropositoXNivel(0);
         }
 
         private void btN3_Click(object sender, EventArgs e)
         {
-            grdProcesos1.DataSource = Nivel3();
-            txtPropositoNivel.Text = nivelAct.Proposito; //
+            //grdProcesos1.DataSource = Nivel3();
+            //txtPropositoNivel.Text = nivelAct.Proposito; //
+            D_Nivel dNivel = new D_Nivel();
+            grdProcesos1.DataSource = dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 3");
+            txtPropositoNivel.Text = dNivel.ObtenerPropositoXNivel(3);
         }
 
         private void btnN5_Click(object sender, EventArgs e)
         {
-            grdProcesos1.DataSource = Nivel5();
-            txtPropositoNivel.Text = nivelAct.Proposito; //
+            //grdProcesos1.DataSource = Nivel5();
+            //txtPropositoNivel.Text = nivelAct.Proposito; //
+            D_Nivel dNivel = new D_Nivel();
+            grdProcesos1.DataSource = dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 5");
+            txtPropositoNivel.Text = dNivel.ObtenerPropositoXNivel(5);
         }
     }
 }

@@ -116,6 +116,7 @@
     <Compile Include="frmRellenarEmpresa.Designer.cs">
       <DependentUpon>frmRellenarEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Metodos\D_Nivel.cs" />
     <Compile Include="Metodos\D_Procesos.cs" />
     <Compile Include="Procesos\frmListaProcesos.cs">
       <SubType>Form</SubType>
