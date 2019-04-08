@@ -28,5 +28,15 @@ namespace Cobit_5.Metodos
                 return query;
             }
         }
+       public static int obtenerIdProcesoXStr(string txt)
+       {
+           using (Software3Entities context = new Software3Entities())
+           {
+               int query = (from proc in context.Proceso
+                   where proc.CodigoProceso.StartsWith(txt)
+                   select proc.Id).FirstOrDefault();
+               return query;
+           }
+       }
     }
 }

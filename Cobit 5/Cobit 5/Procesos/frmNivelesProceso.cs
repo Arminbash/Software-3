@@ -8,19 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cobit_5.Clases_Modelo;
+using Cobit_5.Datos;
 using Cobit_5.Metodos;
+using Proceso = Cobit_5.Clases_Modelo.Proceso;
 
 namespace Cobit_5.Procesos
 {
-    public partial class frmNivelesProceso : Form
+    public partial class frmNivelesProceso : Form, Clases_Modelo.IEmpresa, Clases_Modelo.IProceso
     {
         public Proceso proceso = new Proceso();
-        Nivel nivelAct = new Nivel();
+        public int IdEmpresa = 0;public int idProceso = 0;
+        List<Clases_Modelo.CriterioProceso> listCrit = new List<CriterioProceso>();
+        public string nivelActual = "Nivel 0";
         public frmNivelesProceso()
         {
             InitializeComponent();
         }
-
         private void frmNivelesProceso_Load(object sender, EventArgs e)
         {
             if (proceso != null)
@@ -34,378 +37,396 @@ namespace Cobit_5.Procesos
                 lblN5.Text = proceso.N5;
             }
         }
-        private List<CriterioProceso> Nivel0()
-        {
-            nivelAct.idProceso = "EDM01";
-            nivelAct.Proposito = "El proceso no se lleva a cabo, o no lograr su propósito proceso. ";
+        private void btnN1_Click(object sender, EventArgs e){
+            if ( nivelActual.StartsWith("Nivel 1") || nivelActual.StartsWith("Nivel 2") ||
+                nivelActual.StartsWith("Nivel 3") || nivelActual.StartsWith("Nivel 4") || nivelActual.StartsWith("Nivel 5"))
+            { }
+            else
+            {
+                MessageBox.Show("Debe rellenar los niveles anteriores", "Accion Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            D_Nivel dNivel = new D_Nivel();
+            int IdNivel = D_Nivel.obtenerIdnivelXEmp("Nivel 1", idProceso);
+            listCrit.Clear();
+            foreach (var x in dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 1"))
+            {
+                Clases_Modelo.CriterioProceso crit = new CriterioProceso();
+                crit.Criterio = x.Criterio;
+                crit.Comentario = x.Comentario;
+                crit.seCumple = x.seCumple;
+                crit.noConseguido = x.noConseguido;
+                crit.Parcialmente = x.Parcialmente;
+                crit.ParteConseguido = x.ParteConseguido;
+                crit.Totalidad = x.Totalidad;
+                listCrit.Add(crit);
+            }
 
-            List<CriterioProceso> ListCrit = new List<CriterioProceso>();
-            CriterioProceso crit = new CriterioProceso();
-            crit.Criterio = "En este nivel, hay poca o ninguna evidencia de cualquier logro del propósito del proceso.";
-            crit.seCumple = false;
-            crit.Comentario = "";
-            crit.noConseguido = 0;
-            crit.Parcialmente = 0;
-            crit.ParteConseguido = 0;
-            crit.Totalidad = 0;
-            ListCrit.Add(crit);
-            return ListCrit;
-        }
-        //se pondran todos los criterios del nivel 1 aqui
-        private List<CriterioProceso> Nivel1()
-        {
-            // aqui se configura el nivel y su proposito
-            nivelAct.idProceso = "EDM01";
-            nivelAct.Proposito = "Proporcionar un enfoque coherente integrado y alineado " +
-                                 "con el enfoque de gobierno de la empresa. Para asegurar que los relacionados " +
-                                 "con las TI las decisiones se toman de acuerdo con las estrategias y objetivos de " +
-                                 "la empresa, aseguran que los procesos relacionados con las TI son supervisados ​​con " +
-                                 "eficacia y transparencia, el cumplimiento de los requisitos legales y reglamentarios " +
-                                 "se confirma, y ​​se cumplen los requisitos de gobierno de los miembros del consejo.";
-            //esta es la lista que se le otorgara a un datasource
-            List<CriterioProceso> ListCrit = new List<CriterioProceso>();
-            //se llena la lista con criterios
-            CriterioProceso crit = new CriterioProceso();
-            crit.Criterio = "EDM01-O1 Estratégica modelo de toma de decisiones de TI " +
-                            "es eficaz y alineado con los requisitos ambientales y de grupos de interés internos y " +
-                            "externos de la empresa.";
-            crit.seCumple = false;
-            crit.Comentario = "";
-            crit.noConseguido = 0;
-            crit.Parcialmente = 0;
-            crit.ParteConseguido = 0;
-            crit.Totalidad = 0;
-            ListCrit.Add(crit);//este es el metodo de agregar a la lista de criterios
-
-            CriterioProceso crit2 = new CriterioProceso();
-            crit2.Criterio = "EDM01-O2 El sistema de gobierno de TI es incrustado en la empresa.";
-            crit2.seCumple = false;
-            crit2.Comentario = "";
-            crit2.noConseguido = 0;
-            crit2.Parcialmente = 0;
-            crit2.ParteConseguido = 0;
-            crit2.Totalidad = 0;
-            ListCrit.Add(crit2);
-
-            CriterioProceso crit3 = new CriterioProceso();
-            crit3.Criterio = "EDM01-O2 Aseguramiento se obtiene que el sistema de gobierno de TI está funcionando eficazmente.";
-            crit3.seCumple = false;
-            crit3.Comentario = "";
-            crit3.noConseguido = 0;
-            crit3.Parcialmente = 0;
-            crit3.ParteConseguido = 0;
-            crit3.Totalidad = 0;
-            ListCrit.Add(crit3);
-
-            return ListCrit;//aqui se retorna todos loscriterios del nivel 1
-        }
-        private List<CriterioProceso> Nivel2()
-        {
-            nivelAct.idProceso = "EDM01";
-            nivelAct.Proposito = "PA 2.1 Administración de Rendimiento - Una medida del grado en que se gestiona el rendimiento del proceso.";
-
-            List<CriterioProceso> ListCrit = new List<CriterioProceso>();
-            CriterioProceso crit = new CriterioProceso();
-            crit.Criterio = "una)Se identifican objetivos para el rendimiento del proceso.";
-            crit.seCumple = false;
-            crit.Comentario = "";
-            crit.noConseguido = 0;
-            crit.Parcialmente = 0;
-            crit.ParteConseguido = 0;
-            crit.Totalidad = 0;
-            ListCrit.Add(crit);
-
-            CriterioProceso crit2 = new CriterioProceso();
-            crit2.Criterio = "El rendimiento del proceso es planificado y supervisado.";
-            crit2.seCumple = false;
-            crit2.Comentario = "";
-            crit2.noConseguido = 0;
-            crit2.Parcialmente = 0;
-            crit2.ParteConseguido = 0;
-            crit2.Totalidad = 0;
-            ListCrit.Add(crit2);
-
-
-            CriterioProceso crit3 = new CriterioProceso();
-            crit3.Criterio = "El rendimiento del proceso se ajusta para satisfacer los planes.";
-            crit3.seCumple = false;
-            crit3.Comentario = "";
-            crit3.noConseguido = 0;
-            crit3.Parcialmente = 0;
-            crit3.ParteConseguido = 0;
-            crit3.Totalidad = 0;
-            ListCrit.Add(crit3);
-
-            CriterioProceso crit4 = new CriterioProceso();
-            crit4.Criterio = " Responsabilidades y autoridades para la realización del proceso se definen, asignados y comunicados.";
-            crit4.seCumple = false;
-            crit4.Comentario = "";
-            crit4.noConseguido = 0;
-            crit4.Parcialmente = 0;
-            crit4.ParteConseguido = 0;
-            crit4.Totalidad = 0;
-            ListCrit.Add(crit4);
-
-            CriterioProceso crit5 = new CriterioProceso();
-            crit5.Criterio = "mi)Resources y la información necesaria para realizar el proceso se identifican, ponen a disposición, asignados y utilizados.";
-            crit5.seCumple = false;
-            crit5.Comentario = "";
-            crit5.noConseguido = 0;
-            crit5.Parcialmente = 0;
-            crit5.ParteConseguido = 0;
-            crit5.Totalidad = 0;
-            ListCrit.Add(crit5);
-
-            CriterioProceso crit6 = new CriterioProceso();
-            crit6.Criterio = ")yonterfaces entre las partes involucradas son gestionados para asegurar tanto la comunicación efectiva y clara asignación de responsabilidades. ";
-            crit6.seCumple = false;
-            crit6.Comentario = "";
-            crit6.noConseguido = 0;
-            crit6.Parcialmente = 0;
-            crit6.ParteConseguido = 0;
-            crit6.Totalidad = 0;
-            ListCrit.Add(crit6);
-
-            return ListCrit;
-            
-
-        }
-        private List<CriterioProceso> Nivel3()
-        {
-            nivelAct.idProceso = "EDM01";
-            nivelAct.Proposito = "PA 3.1 Definición del proceso - Una medida del grado en que un proceso estándar se mantiene para apoyar el despliegue del proceso definido.";
-            List<CriterioProceso> ListCrit = new List<CriterioProceso>();
-            CriterioProceso crit = new CriterioProceso();
-            crit.Criterio = "una)UNA proceso estándar, incluyendo guías de adaptación apropiadas, se define que describe los elementos fundamentales que deben ser incorporados en un proceso definido.";
-            crit.seCumple = false;
-            crit.Comentario = "";
-            crit.noConseguido = 0;
-            crit.Parcialmente = 0;
-            crit.ParteConseguido = 0;
-            crit.Totalidad = 0;
-            ListCrit.Add(crit);
-
-            CriterioProceso crit2 = new CriterioProceso();
-            crit2.Criterio = "segundo)Tque la secuencia y la interacción del proceso estándar con otros procesos se determina.";
-            crit2.seCumple = false;
-            crit2.Comentario = "";
-            crit2.noConseguido = 0;
-            crit2.Parcialmente = 0;
-            crit2.ParteConseguido = 0;
-            crit2.Totalidad = 0;
-            ListCrit.Add(crit2);
-
-            CriterioProceso crit3 = new CriterioProceso();
-            crit3.Criterio = " competencias y funciones necesarias para la realización de un proceso se identifican como parte del proceso estándar.";
-            crit3.seCumple = false;
-            crit3.Comentario = "";
-            crit3.noConseguido = 0;
-            crit3.Parcialmente = 0;
-            crit3.ParteConseguido = 0;
-            crit3.Totalidad = 0;
-            ListCrit.Add(crit3);
-
-            CriterioProceso crit4 = new CriterioProceso();
-            crit4.Criterio = "re)Rinfraestructura EQUERIDO y entorno de trabajo para realizar un proceso se identifican como parte del proceso estándar.";
-            crit4.seCumple = false;
-            crit4.Comentario = "";
-            crit4.noConseguido = 0;
-            crit4.Parcialmente = 0;
-            crit4.ParteConseguido = 0;
-            crit4.Totalidad = 0;
-            ListCrit.Add(crit4);
-
-            CriterioProceso crit5 = new CriterioProceso();
-            crit5.Criterio = "Sse determinan métodos uitable de control de eficacia e idoneidad del proceso.";
-            crit5.seCumple = false;
-            crit5.Comentario = "";
-            crit5.noConseguido = 0;
-            crit5.Parcialmente = 0;
-            crit5.ParteConseguido = 0;
-            crit5.Totalidad = 0;
-            ListCrit.Add(crit5);
-            return ListCrit;
-
-        }
-        private List<CriterioProceso> Nivel4()
-        {
-            nivelAct.idProceso = "EDM01";
-            nivelAct.Proposito = "PA 4.1 Proceso de medida - Una medida del grado en que se utilizan los resultados de medición para asegurar que el rendimiento del proceso es compatible con el logro de los objetivos de rendimiento de los procesos pertinentes en apoyo de los objetivos de negocio definidos.";
-            List<CriterioProceso> ListCrit = new List<CriterioProceso>();
-            CriterioProceso crit = new CriterioProceso();
-            crit.Criterio = "una)PAGinformación rocess necesita se establecen en apoyo de los objetivos de negocio definidos pertinentes.";
-            crit.seCumple = false;
-            crit.Comentario = "";
-            crit.noConseguido = 0;
-            crit.Parcialmente = 0;
-            crit.ParteConseguido = 0;
-            crit.Totalidad = 0;
-            ListCrit.Add(crit);
-
-            CriterioProceso crit2 = new CriterioProceso();
-            crit2.Criterio = "segundo)PAGobjetivos de medición roceso se derivan de las necesidades de información de proceso.";
-            crit2.seCumple = false;
-            crit2.Comentario = "";
-            crit2.noConseguido = 0;
-            crit2.Parcialmente = 0;
-            crit2.ParteConseguido = 0;
-            crit2.Totalidad = 0;
-            ListCrit.Add(crit2);
-
-            CriterioProceso crit3 = new CriterioProceso();
-            crit3.Criterio = "do)QSe establecen objetivos cuantitativas para el desempeño del proceso en apoyo de los objetivos de negocio relevantes.";
-            crit3.seCumple = false;
-            crit3.Comentario = "";
-            crit3.noConseguido = 0;
-            crit3.Parcialmente = 0;
-            crit3.ParteConseguido = 0;
-            crit3.Totalidad = 0;
-            ListCrit.Add(crit3);
-
-            CriterioProceso crit4 = new CriterioProceso();
-            crit4.Criterio = "re)METROedidas y la frecuencia de medición se identifican y definen en línea con los objetivos de medición de procesos y objetivos cuantitativos para el rendimiento del proceso.";
-            crit4.seCumple = false;
-            crit4.Comentario = "";
-            crit4.noConseguido = 0;
-            crit4.Parcialmente = 0;
-            crit4.ParteConseguido = 0;
-            crit4.Totalidad = 0;
-            ListCrit.Add(crit4);
-
-            CriterioProceso crit5 = new CriterioProceso();
-            crit5.Criterio = "mi)Resultados de medición se recogen, se analizaron e informaron el fin de controlar la medida en que se cumplan los objetivos cuantitativos para el rendimiento del proceso.";
-            crit5.seCumple = false;
-            crit5.Comentario = "";
-            crit5.noConseguido = 0;
-            crit5.Parcialmente = 0;
-            crit5.ParteConseguido = 0;
-            crit5.Totalidad = 0;
-            ListCrit.Add(crit5);
-
-            CriterioProceso crit6 = new CriterioProceso();
-            crit6.Criterio = "f) Los resultados de medición se utilizan para caracterizar el rendimiento del proceso.";
-            crit6.seCumple = false;
-            crit6.Comentario = "";
-            crit6.noConseguido = 0;
-            crit6.Parcialmente = 0;
-            crit6.ParteConseguido = 0;
-            crit6.Totalidad = 0;
-            ListCrit.Add(crit6);
-
-            return ListCrit;
-          
-        }
-        private List<CriterioProceso> Nivel5()
-        {
-            nivelAct.idProceso = "EDM01";
-            nivelAct.Proposito = "PA 5.1 Proceso de innovación - Una medida del grado en que los cambios en el proceso se identifican a partir del análisis de las causas comunes de variación en el rendimiento, ya partir de las investigaciones de enfoques innovadores para la definición e implementación del proceso.  ";
-            List<CriterioProceso> ListCrit = new List<CriterioProceso>();
-            CriterioProceso crit = new CriterioProceso();
-            crit.Criterio = "a) los objetivos de mejora Pprocess para el proceso están definidos que apoyan los objetivos de negocio relevantes.";
-            crit.seCumple = false;
-            crit.Comentario = "";
-            crit.noConseguido = 0;
-            crit.Parcialmente = 0;
-            crit.ParteConseguido = 0;
-            crit.Totalidad = 0;
-            ListCrit.Add(crit);
-
-            CriterioProceso crit2 = new CriterioProceso();
-            crit2.Criterio = "segundo)   UNASe analizan los datos ppropriate para identificar las causas comunes de las variaciones en el rendimiento del proceso.";
-            crit2.seCumple = false;
-            crit2.Comentario = "";
-            crit2.noConseguido = 0;
-            crit2.Parcialmente = 0;
-            crit2.ParteConseguido = 0;
-            crit2.Totalidad = 0;
-            ListCrit.Add(crit2);
-
-            CriterioProceso crit3 = new CriterioProceso();
-            crit3.Criterio = "do)   UNASe analizan los datos ppropriate para identificar oportunidades de mejores prácticas y la innovación.";
-            crit3.seCumple = false;
-            crit3.Comentario = "";
-            crit3.noConseguido = 0;
-            crit3.Parcialmente = 0;
-            crit3.ParteConseguido = 0;
-            crit3.Totalidad = 0;
-            ListCrit.Add(crit3);
-
-            CriterioProceso crit4 = new CriterioProceso();
-            crit4.Criterio = "re)   yoSe identifican oportunidades MEJORAMIENTO derivados de las nuevas tecnologías y conceptos de proceso.";
-            crit4.seCumple = false;
-            crit4.Comentario = "";
-            crit4.noConseguido = 0;
-            crit4.Parcialmente = 0;
-            crit4.ParteConseguido = 0;
-            crit4.Totalidad = 0;
-            ListCrit.Add(crit4);
-
-            CriterioProceso crit5 = new CriterioProceso();
-            crit5.Criterio = "mi)   Una estrategia de ejecución se establece para alcanzar los objetivos de mejora de procesos. ";
-            crit5.seCumple = false;
-            crit5.Comentario = "";
-            crit5.noConseguido = 0;
-            crit5.Parcialmente = 0;
-            crit5.ParteConseguido = 0;
-            crit5.Totalidad = 0;
-            ListCrit.Add(crit5);
-
-            return ListCrit;
-
-        }
-
-        private void btnN1_Click(object sender, EventArgs e)
-        {
-            //grdProcesos1.DataSource = Nivel1();//cuando se de click en el boton se cargan todo los criterios del nivel
-            //txtPropositoNivel.Text = nivelAct.Proposito; // aqui le decimos que carge el proposito del nivel
-            D_Nivel dNivel= new D_Nivel();
-            grdProcesos1.DataSource = dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 1");
+            try
+            {
+                foreach (var y in D_Criterios.obtenerListaCriterioEmp(IdNivel, IdEmpresa))
+                {
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Comentario = y.Comentario;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).seCumple = (bool)y.SeCumple;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).noConseguido = (int)y.NoConseguido;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).ParteConseguido = (int)y.ParteConseguido;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Parcialmente = (int)y.Parcialmente;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Totalidad = (int)y.Totalidad;
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
+            grdcProcesos1.DataSource = null;
+            grdcProcesos1.DataSource = listCrit;
             txtPropositoNivel.Text = dNivel.ObtenerPropositoXNivel(1);
         }
-
         private void btN2_Click(object sender, EventArgs e)
         {
-            //grdProcesos1.DataSource = Nivel2();
-            //txtPropositoNivel.Text = nivelAct.Proposito; //
+            if ( nivelActual.StartsWith("Nivel 2") ||nivelActual.StartsWith("Nivel 3") || nivelActual.StartsWith("Nivel 4") || nivelActual.StartsWith("Nivel 5"))
+            { }
+            else
+            {
+                MessageBox.Show("Debe rellenar los niveles anteriores", "Accion Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             D_Nivel dNivel = new D_Nivel();
-            grdProcesos1.DataSource = dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 2");
+            int IdNivel = D_Nivel.obtenerIdnivelXEmp("Nivel 2", idProceso);
+            listCrit.Clear();
+            foreach (var x in  dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 2"))
+            {
+                Clases_Modelo.CriterioProceso crit = new CriterioProceso();
+                crit.Criterio = x.Criterio;
+                crit.Comentario = x.Comentario;
+                crit.seCumple = x.seCumple;
+                crit.noConseguido = x.noConseguido;
+                crit.Parcialmente = x.Parcialmente;
+                crit.ParteConseguido = x.ParteConseguido;
+                crit.Totalidad = x.Totalidad;
+                listCrit.Add(crit);
+            }
+
+            try
+            {
+                foreach (var y in D_Criterios.obtenerListaCriterioEmp(IdNivel, IdEmpresa))
+                {
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Comentario = y.Comentario;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).seCumple = (bool)y.SeCumple;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).noConseguido = (int)y.NoConseguido;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).ParteConseguido = (int)y.ParteConseguido;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Parcialmente = (int)y.Parcialmente;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Totalidad = (int)y.Totalidad;
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
+            grdcProcesos1.DataSource = null;
+            grdcProcesos1.DataSource = listCrit;
             txtPropositoNivel.Text = dNivel.ObtenerPropositoXNivel(2);
         }
-
-        private void btnN4_Click(object sender, EventArgs e)
-        {
-            //grdProcesos1.DataSource = Nivel4();
-            //txtPropositoNivel.Text = nivelAct.Proposito; //
+        private void btnN4_Click(object sender, EventArgs e){
+            if ( nivelActual.StartsWith("Nivel 4") || nivelActual.StartsWith("Nivel 5"))
+            { }
+            else
+            {
+                MessageBox.Show("Debe rellenar los niveles anteriores", "Accion Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             D_Nivel dNivel = new D_Nivel();
-            grdProcesos1.DataSource = dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 4");
+            int IdNivel = D_Nivel.obtenerIdnivelXEmp("Nivel 4", idProceso);
+            listCrit.Clear();
+            foreach (var x in dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 4"))
+            {
+                Clases_Modelo.CriterioProceso crit = new CriterioProceso();
+                crit.Criterio = x.Criterio;
+                crit.Comentario = x.Comentario;
+                crit.seCumple = x.seCumple;
+                crit.noConseguido = x.noConseguido;
+                crit.Parcialmente = x.Parcialmente;
+                crit.ParteConseguido = x.ParteConseguido;
+                crit.Totalidad = x.Totalidad;
+                listCrit.Add(crit);
+            }
+
+            try
+            {
+                foreach (var y in D_Criterios.obtenerListaCriterioEmp(IdNivel, IdEmpresa))
+                {
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Comentario = y.Comentario;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).seCumple = (bool)y.SeCumple;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).noConseguido = (int)y.NoConseguido;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).ParteConseguido = (int)y.ParteConseguido;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Parcialmente = (int)y.Parcialmente;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Totalidad = (int)y.Totalidad;
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
+            grdcProcesos1.DataSource = null;
+            grdcProcesos1.DataSource = listCrit;
             txtPropositoNivel.Text = dNivel.ObtenerPropositoXNivel(4);
         }
-
         private void btnN0_Click(object sender, EventArgs e)
         {
-            //grdProcesos1.DataSource = Nivel0();
-            //txtPropositoNivel.Text = nivelAct.Proposito; //
+            if (nivelActual.StartsWith("Nivel 0") || nivelActual.StartsWith("Nivel 1") || nivelActual.StartsWith("Nivel 2") ||
+            nivelActual.StartsWith("Nivel 3") || nivelActual.StartsWith("Nivel 4") || nivelActual.StartsWith("Nivel 5"))
+            { }
+                else
+            {
+                MessageBox.Show("Debe rellenar los niveles anteriores", "Accion Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             D_Nivel dNivel = new D_Nivel();
-            grdProcesos1.DataSource = dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 0");
+            int IdNivel = D_Nivel.obtenerIdnivelXEmp("Nivel 0", idProceso);
+            listCrit.Clear();
+            foreach (var x in dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 0"))
+            {
+                Clases_Modelo.CriterioProceso crit = new CriterioProceso();
+                crit.Criterio = x.Criterio;
+                crit.Comentario = x.Comentario;
+                crit.seCumple = x.seCumple;
+                crit.noConseguido = x.noConseguido;
+                crit.Parcialmente = x.Parcialmente;
+                crit.ParteConseguido = x.ParteConseguido;
+                crit.Totalidad = x.Totalidad;
+                listCrit.Add(crit);
+            }
+
+            try
+            {
+                foreach (var y in D_Criterios.obtenerListaCriterioEmp(IdNivel, IdEmpresa))
+                {
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Comentario = y.Comentario;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).seCumple = (bool)y.SeCumple;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).noConseguido = (int)y.NoConseguido;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).ParteConseguido = (int)y.ParteConseguido;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Parcialmente = (int)y.Parcialmente;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Totalidad = (int)y.Totalidad;
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
+            grdcProcesos1.DataSource = null;
+            grdcProcesos1.DataSource = listCrit;
             txtPropositoNivel.Text = dNivel.ObtenerPropositoXNivel(0);
         }
-
         private void btN3_Click(object sender, EventArgs e)
         {
-            //grdProcesos1.DataSource = Nivel3();
-            //txtPropositoNivel.Text = nivelAct.Proposito; //
+            if (nivelActual.StartsWith("Nivel 3") || nivelActual.StartsWith("Nivel 4") || nivelActual.StartsWith("Nivel 5"))
+            { }
+            else
+            {
+                MessageBox.Show("Debe rellenar los niveles anteriores", "Accion Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             D_Nivel dNivel = new D_Nivel();
-            grdProcesos1.DataSource = dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 3");
+            int IdNivel = D_Nivel.obtenerIdnivelXEmp("Nivel 3", idProceso);
+            listCrit.Clear();
+            foreach (var x in dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 3"))
+            {
+                Clases_Modelo.CriterioProceso crit = new CriterioProceso();
+                crit.Criterio = x.Criterio;
+                crit.Comentario = x.Comentario;
+                crit.seCumple = x.seCumple;
+                crit.noConseguido = x.noConseguido;
+                crit.Parcialmente = x.Parcialmente;
+                crit.ParteConseguido = x.ParteConseguido;
+                crit.Totalidad = x.Totalidad;
+                listCrit.Add(crit);
+            }
+            try
+            {
+                foreach (var y in D_Criterios.obtenerListaCriterioEmp(IdNivel, IdEmpresa))
+                {
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Comentario = y.Comentario;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).seCumple = (bool)y.SeCumple;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).noConseguido = (int)y.NoConseguido;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).ParteConseguido = (int)y.ParteConseguido;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Parcialmente = (int)y.Parcialmente;
+                    listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Totalidad = (int)y.Totalidad;
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
+
+            grdcProcesos1.DataSource = null;
+            grdcProcesos1.DataSource = listCrit;
             txtPropositoNivel.Text = dNivel.ObtenerPropositoXNivel(3);
         }
-
-        private void btnN5_Click(object sender, EventArgs e)
-        {
-            //grdProcesos1.DataSource = Nivel5();
-            //txtPropositoNivel.Text = nivelAct.Proposito; //
+        private void btnN5_Click(object sender, EventArgs e){
+            if ( nivelActual.StartsWith("Nivel 5"))
+            { }
+            else
+            {
+                MessageBox.Show("Debe rellenar los niveles anteriores", "Accion Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             D_Nivel dNivel = new D_Nivel();
-            grdProcesos1.DataSource = dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 5");
+            int IdNivel = D_Nivel.obtenerIdnivelXEmp("Nivel 5", idProceso);
+            listCrit.Clear();
+            foreach (var x in dNivel.ObtenerCriteriosXNivel(proceso.idProceso, "Nivel 5"))
+            {
+                Clases_Modelo.CriterioProceso crit = new CriterioProceso();
+                crit.Criterio = x.Criterio;
+                crit.Comentario = x.Comentario;
+                crit.seCumple = x.seCumple;
+                crit.noConseguido = x.noConseguido;
+                crit.Parcialmente = x.Parcialmente;
+                crit.ParteConseguido = x.ParteConseguido;
+                crit.Totalidad = x.Totalidad;
+                listCrit.Add(crit);
+            }
+
+            try
+            {
+            foreach (var y in D_Criterios.obtenerListaCriterioEmp(IdNivel, IdEmpresa))
+            {
+                listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Comentario = y.Comentario;
+                listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).seCumple = (bool)y.SeCumple;
+                listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).noConseguido = (int)y.NoConseguido;
+                listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).ParteConseguido = (int)y.ParteConseguido;
+                listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Parcialmente = (int)y.Parcialmente;
+                listCrit.Find(x => x.Criterio == y.Criterio.DetalleCriterio).Totalidad = (int)y.Totalidad;
+            }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
+
+            grdcProcesos1.DataSource = null;
+            grdcProcesos1.DataSource = listCrit;
             txtPropositoNivel.Text = dNivel.ObtenerPropositoXNivel(5);
         }
-    }
-}
+        private void grdProcesos1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.Column.Name == "colnoConseguido")
+            {
+                int value = 0;
+                if (listCrit[e.RowHandle].seCumple == true)
+                    value = (int) e.Value;
+                listCrit[e.RowHandle].noConseguido = value;
+                listCrit[e.RowHandle].ParteConseguido = 0;
+                listCrit[e.RowHandle].Parcialmente = 0;
+                listCrit[e.RowHandle].Totalidad = 0;
+            }
+            if (e.Column.Name == "colParcialmente")
+            {
+                int value = 0;
+                if (listCrit[e.RowHandle].seCumple == true)value = (int)e.Value;
+                if (value < 15 && value>0)
+                    value = 16;
+                listCrit[e.RowHandle].noConseguido = 0;
+                listCrit[e.RowHandle].ParteConseguido = 0;
+                listCrit[e.RowHandle].Parcialmente = value;
+                listCrit[e.RowHandle].Totalidad = 0;
+            }
+            if (e.Column.Name == "colParteConseguido")
+            {
+                int value = 0;
+                if (listCrit[e.RowHandle].seCumple == true)
+                    value = (int)e.Value;
+                if (value < 50 && value > 0)
+                    value = 51;
+                listCrit[e.RowHandle].noConseguido = 0;
+                listCrit[e.RowHandle].ParteConseguido = value;
+                listCrit[e.RowHandle].Parcialmente = 0;
+                listCrit[e.RowHandle].Totalidad = 0;
+            }
+            if (e.Column.Name == "colTotalidad")
+            {
+                int value = 0;
+                if (listCrit[e.RowHandle].seCumple == true)
+                    value = (int)e.Value;
+                if (value < 85 && value > 0)
+                    value = 86;
+                listCrit[e.RowHandle].noConseguido = 0;
+                listCrit[e.RowHandle].ParteConseguido = 0;
+                listCrit[e.RowHandle].Parcialmente = 0;
+                listCrit[e.RowHandle].Totalidad = value;
+            }
+            if (e.Column.Name == "colseCumple")
+            {
+                if ((bool) e.Value == false)
+                {
+                listCrit[e.RowHandle].noConseguido = 0;
+                listCrit[e.RowHandle].ParteConseguido = 0;
+                listCrit[e.RowHandle].Parcialmente = 0;
+                listCrit[e.RowHandle].Totalidad = 0;
+                }
+                
+            }
+        }
+
+        public void ObtenerIdEmpresa(int id)
+        {
+            IdEmpresa = id;
+            spIdEmpresa.Value = id;
+        }
+
+        public void ObtenerProceso(Proceso proc)
+        {
+            proceso = proc;
+        }
+
+        private void spIdEmpresa_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rellenarLista(ref List<CriterioEmpresa> critsEmp)
+        {
+            foreach (var x in listCrit)
+            {
+                int idCrit = D_Criterios.obtenerIdCriterioXStr(x.Criterio);
+                CriterioEmpresa crit = new CriterioEmpresa
+                {
+                    IdCriterio = idCrit,
+                    IdEmpresa = IdEmpresa,
+                    Id = D_Criterios.obtenerIdCriterioEmp(idCrit, IdEmpresa),
+                    SeCumple = x.seCumple,
+                    Comentario = x.Comentario,
+                    NoConseguido = x.noConseguido,ParteConseguido = x.ParteConseguido,
+                    Parcialmente = x.Parcialmente,
+                    Totalidad = x.Totalidad,
+                    Estatus = true
+                };
+                critsEmp.Add(crit);
+            }
+        }
+        public void Guardar()
+        {
+            try
+            {
+           List<CriterioEmpresa> critsEmp = new List<CriterioEmpresa>();
+           rellenarLista(ref critsEmp);
+           D_MetodosGenericos met = new D_MetodosGenericos();
+           if (met.AddOrUpdateRangeObj(critsEmp,new Software3Entities()))
+           {
+               MessageBox.Show("Se guardo correctamente", "Accion Correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           }
+           else
+           {
+               MessageBox.Show("Ocurrio un error al guardar", "Error en el metodo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+           }
+        }
+        catch (Exception e)
+        {
+            MessageBox.Show("Ocurrio un error al guardar", "Mensaje Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        }
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Guardar();
+        }
+    }}

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnN1 = new System.Windows.Forms.Button();
             this.btN2 = new System.Windows.Forms.Button();
             this.btN3 = new System.Windows.Forms.Button();
@@ -44,19 +43,32 @@
             this.lblN5 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtIdentificador = new System.Windows.Forms.TextBox();
-            this.grdProcesos1 = new System.Windows.Forms.DataGridView();
-            this.Criterio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.seCumple = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Comentario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noConseguido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Parcialmente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ParteConseguido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Totalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPropositoNivel = new System.Windows.Forms.TextBox();
             this.btnN0 = new System.Windows.Forms.Button();
             this.lblN0 = new System.Windows.Forms.Label();
+            this.grdcProcesos1 = new DevExpress.XtraGrid.GridControl();
+            this.grdProcesos1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colCriterio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colseCumple = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComentario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnoConseguido = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.colParcialmente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.colParteConseguido = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemSpinEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.colTotalidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemSpinEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.spIdEmpresa = new DevExpress.XtraEditors.SpinEdit();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.grdcProcesos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdProcesos1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spIdEmpresa.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnN1
@@ -212,82 +224,6 @@
             this.txtIdentificador.Size = new System.Drawing.Size(176, 22);
             this.txtIdentificador.TabIndex = 22;
             // 
-            // grdProcesos1
-            // 
-            this.grdProcesos1.AllowUserToAddRows = false;
-            this.grdProcesos1.AllowUserToDeleteRows = false;
-            this.grdProcesos1.BackgroundColor = System.Drawing.Color.White;
-            this.grdProcesos1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdProcesos1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Criterio,
-            this.seCumple,
-            this.Comentario,
-            this.noConseguido,
-            this.Parcialmente,
-            this.ParteConseguido,
-            this.Totalidad});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdProcesos1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.grdProcesos1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.grdProcesos1.Location = new System.Drawing.Point(12, 285);
-            this.grdProcesos1.MultiSelect = false;
-            this.grdProcesos1.Name = "grdProcesos1";
-            this.grdProcesos1.Size = new System.Drawing.Size(917, 339);
-            this.grdProcesos1.TabIndex = 23;
-            // 
-            // Criterio
-            // 
-            this.Criterio.DataPropertyName = "Criterio";
-            this.Criterio.HeaderText = "Criterio";
-            this.Criterio.Name = "Criterio";
-            this.Criterio.ReadOnly = true;
-            this.Criterio.Width = 200;
-            // 
-            // seCumple
-            // 
-            this.seCumple.DataPropertyName = "seCumple";
-            this.seCumple.HeaderText = "seCumple";
-            this.seCumple.Name = "seCumple";
-            this.seCumple.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.seCumple.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Comentario
-            // 
-            this.Comentario.DataPropertyName = "Comentario";
-            this.Comentario.HeaderText = "Comentario";
-            this.Comentario.Name = "Comentario";
-            this.Comentario.Width = 200;
-            // 
-            // noConseguido
-            // 
-            this.noConseguido.DataPropertyName = "noConseguido";
-            this.noConseguido.HeaderText = "noConseguido";
-            this.noConseguido.Name = "noConseguido";
-            // 
-            // Parcialmente
-            // 
-            this.Parcialmente.DataPropertyName = "Parcialmente";
-            this.Parcialmente.HeaderText = "Parcialmente";
-            this.Parcialmente.Name = "Parcialmente";
-            // 
-            // ParteConseguido
-            // 
-            this.ParteConseguido.DataPropertyName = "ParteConseguido";
-            this.ParteConseguido.HeaderText = "ParteConseguido";
-            this.ParteConseguido.Name = "ParteConseguido";
-            // 
-            // Totalidad
-            // 
-            this.Totalidad.DataPropertyName = "Totalidad";
-            this.Totalidad.HeaderText = "Totalidad";
-            this.Totalidad.Name = "Totalidad";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -329,16 +265,192 @@
             this.lblN0.TabIndex = 27;
             this.lblN0.Text = "0";
             // 
+            // grdcProcesos1
+            // 
+            this.grdcProcesos1.Location = new System.Drawing.Point(12, 285);
+            this.grdcProcesos1.MainView = this.grdProcesos1;
+            this.grdcProcesos1.Name = "grdcProcesos1";
+            this.grdcProcesos1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemSpinEdit1,
+            this.repositoryItemSpinEdit2,
+            this.repositoryItemSpinEdit3,
+            this.repositoryItemSpinEdit4});
+            this.grdcProcesos1.Size = new System.Drawing.Size(917, 325);
+            this.grdcProcesos1.TabIndex = 28;
+            this.grdcProcesos1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdProcesos1});
+            // 
+            // grdProcesos1
+            // 
+            this.grdProcesos1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCriterio,
+            this.colseCumple,
+            this.colComentario,
+            this.colnoConseguido,
+            this.colParcialmente,
+            this.colParteConseguido,
+            this.colTotalidad});
+            this.grdProcesos1.GridControl = this.grdcProcesos1;
+            this.grdProcesos1.Name = "grdProcesos1";
+            this.grdProcesos1.OptionsCustomization.AllowColumnMoving = false;
+            this.grdProcesos1.OptionsCustomization.AllowSort = false;
+            this.grdProcesos1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grdProcesos1_CellValueChanged);
+            // 
+            // colCriterio
+            // 
+            this.colCriterio.Caption = "Criterio";
+            this.colCriterio.FieldName = "Criterio";
+            this.colCriterio.Name = "colCriterio";
+            this.colCriterio.OptionsColumn.AllowEdit = false;
+            this.colCriterio.Visible = true;
+            this.colCriterio.VisibleIndex = 0;
+            // 
+            // colseCumple
+            // 
+            this.colseCumple.Caption = "seCumple";
+            this.colseCumple.FieldName = "seCumple";
+            this.colseCumple.Name = "colseCumple";
+            this.colseCumple.Visible = true;
+            this.colseCumple.VisibleIndex = 1;
+            // 
+            // colComentario
+            // 
+            this.colComentario.Caption = "Comentario";
+            this.colComentario.FieldName = "Comentario";
+            this.colComentario.Name = "colComentario";
+            this.colComentario.Visible = true;
+            this.colComentario.VisibleIndex = 2;
+            // 
+            // colnoConseguido
+            // 
+            this.colnoConseguido.Caption = "No Conseguido";
+            this.colnoConseguido.ColumnEdit = this.repositoryItemSpinEdit1;
+            this.colnoConseguido.FieldName = "noConseguido";
+            this.colnoConseguido.Name = "colnoConseguido";
+            this.colnoConseguido.Visible = true;
+            this.colnoConseguido.VisibleIndex = 3;
+            // 
+            // repositoryItemSpinEdit1
+            // 
+            this.repositoryItemSpinEdit1.AutoHeight = false;
+            this.repositoryItemSpinEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSpinEdit1.IsFloatValue = false;
+            this.repositoryItemSpinEdit1.Mask.EditMask = "N00";
+            this.repositoryItemSpinEdit1.MaxValue = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.repositoryItemSpinEdit1.Name = "repositoryItemSpinEdit1";
+            // 
+            // colParcialmente
+            // 
+            this.colParcialmente.Caption = "Parcialmente Logrado";
+            this.colParcialmente.ColumnEdit = this.repositoryItemSpinEdit2;
+            this.colParcialmente.FieldName = "Parcialmente";
+            this.colParcialmente.Name = "colParcialmente";
+            this.colParcialmente.Visible = true;
+            this.colParcialmente.VisibleIndex = 4;
+            // 
+            // repositoryItemSpinEdit2
+            // 
+            this.repositoryItemSpinEdit2.AutoHeight = false;
+            this.repositoryItemSpinEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSpinEdit2.IsFloatValue = false;
+            this.repositoryItemSpinEdit2.Mask.EditMask = "N00";
+            this.repositoryItemSpinEdit2.MaxValue = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.repositoryItemSpinEdit2.Name = "repositoryItemSpinEdit2";
+            // 
+            // colParteConseguido
+            // 
+            this.colParteConseguido.Caption = "Parte Conseguido";
+            this.colParteConseguido.ColumnEdit = this.repositoryItemSpinEdit3;
+            this.colParteConseguido.FieldName = "ParteConseguido";
+            this.colParteConseguido.Name = "colParteConseguido";
+            this.colParteConseguido.Visible = true;
+            this.colParteConseguido.VisibleIndex = 5;
+            // 
+            // repositoryItemSpinEdit3
+            // 
+            this.repositoryItemSpinEdit3.AutoHeight = false;
+            this.repositoryItemSpinEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSpinEdit3.IsFloatValue = false;
+            this.repositoryItemSpinEdit3.Mask.EditMask = "N00";
+            this.repositoryItemSpinEdit3.MaxValue = new decimal(new int[] {
+            85,
+            0,
+            0,
+            0});
+            this.repositoryItemSpinEdit3.Name = "repositoryItemSpinEdit3";
+            // 
+            // colTotalidad
+            // 
+            this.colTotalidad.Caption = "En su Totalidad";
+            this.colTotalidad.ColumnEdit = this.repositoryItemSpinEdit4;
+            this.colTotalidad.FieldName = "Totalidad";
+            this.colTotalidad.Name = "colTotalidad";
+            this.colTotalidad.Visible = true;
+            this.colTotalidad.VisibleIndex = 6;
+            // 
+            // repositoryItemSpinEdit4
+            // 
+            this.repositoryItemSpinEdit4.AutoHeight = false;
+            this.repositoryItemSpinEdit4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSpinEdit4.IsFloatValue = false;
+            this.repositoryItemSpinEdit4.Mask.EditMask = "N00";
+            this.repositoryItemSpinEdit4.MaxValue = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.repositoryItemSpinEdit4.Name = "repositoryItemSpinEdit4";
+            // 
+            // spIdEmpresa
+            // 
+            this.spIdEmpresa.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spIdEmpresa.Location = new System.Drawing.Point(812, 6);
+            this.spIdEmpresa.Name = "spIdEmpresa";
+            this.spIdEmpresa.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spIdEmpresa.Size = new System.Drawing.Size(100, 20);
+            this.spIdEmpresa.TabIndex = 29;
+            this.spIdEmpresa.Visible = false;
+            this.spIdEmpresa.EditValueChanged += new System.EventHandler(this.spIdEmpresa_EditValueChanged);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(854, 616);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 30;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // frmNivelesProceso
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(941, 636);
+            this.ClientSize = new System.Drawing.Size(941, 641);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.spIdEmpresa);
+            this.Controls.Add(this.grdcProcesos1);
             this.Controls.Add(this.lblN0);
             this.Controls.Add(this.btnN0);
             this.Controls.Add(this.txtPropositoNivel);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.grdProcesos1);
             this.Controls.Add(this.txtIdentificador);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblN5);
@@ -361,7 +473,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Niveles del Proceso";
             this.Load += new System.EventHandler(this.frmNivelesProceso_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grdcProcesos1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdProcesos1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spIdEmpresa.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,17 +502,24 @@
         private System.Windows.Forms.Label lblN5;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtIdentificador;
-        private System.Windows.Forms.DataGridView grdProcesos1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Criterio;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn seCumple;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Comentario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noConseguido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Parcialmente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ParteConseguido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Totalidad;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPropositoNivel;
         private System.Windows.Forms.Button btnN0;
         private System.Windows.Forms.Label lblN0;
+        private DevExpress.XtraGrid.GridControl grdcProcesos1;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdProcesos1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCriterio;
+        private DevExpress.XtraGrid.Columns.GridColumn colseCumple;
+        private DevExpress.XtraGrid.Columns.GridColumn colComentario;
+        private DevExpress.XtraGrid.Columns.GridColumn colnoConseguido;
+        private DevExpress.XtraGrid.Columns.GridColumn colParcialmente;
+        private DevExpress.XtraGrid.Columns.GridColumn colParteConseguido;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalidad;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit4;
+        private DevExpress.XtraEditors.SpinEdit spIdEmpresa;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

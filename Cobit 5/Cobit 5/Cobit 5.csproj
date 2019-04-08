@@ -31,7 +31,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Cobit_5.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -54,6 +66,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases Modelo\CriterioProceso.cs" />
+    <Compile Include="Clases Modelo\Factory.cs" />
+    <Compile Include="Clases Modelo\IMetodos.cs" />
     <Compile Include="Clases Modelo\Nivel.cs" />
     <Compile Include="Clases Modelo\Proceso.cs" />
     <Compile Include="Datos\Criterio.cs">
@@ -104,11 +118,59 @@
     <Compile Include="Datos\sysdiagrams.cs">
       <DependentUpon>software3.tt</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Formularios\CargaSistema.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Formularios\CargaSistema.Designer.cs">
+      <DependentUpon>CargaSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmDatosEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmDatosEmpresa.Designer.cs">
+      <DependentUpon>frmDatosEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Grids\frmListaEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Grids\frmListaEmpresas.Designer.cs">
+      <DependentUpon>frmListaEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Procesos\frmProcesosAPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Procesos\frmProcesosAPO.Designer.cs">
+      <DependentUpon>frmProcesosAPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Procesos\frmProcesosBAI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Procesos\frmProcesosBAI.Designer.cs">
+      <DependentUpon>frmProcesosBAI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Procesos\frmProcesosDSS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Procesos\frmProcesosDSS.Designer.cs">
+      <DependentUpon>frmProcesosDSS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Procesos\frmProcesosEDM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Procesos\frmProcesosEDM.Designer.cs">
+      <DependentUpon>frmProcesosEDM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frnPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frnPrincipal.Designer.cs">
+      <DependentUpon>frnPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Procesos\frmProcesosMEA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Procesos\frmProcesosMEA.Designer.cs">
+      <DependentUpon>frmProcesosMEA.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRellenarEmpresa.cs">
       <SubType>Form</SubType>
@@ -116,6 +178,9 @@
     <Compile Include="frmRellenarEmpresa.Designer.cs">
       <DependentUpon>frmRellenarEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Metodos\D_Criterios.cs" />
+    <Compile Include="Metodos\D_Empresa.cs" />
+    <Compile Include="Metodos\D_MetodosGenericos.cs" />
     <Compile Include="Metodos\D_Nivel.cs" />
     <Compile Include="Metodos\D_Procesos.cs" />
     <Compile Include="Procesos\frmListaProcesos.cs">
@@ -132,8 +197,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\CargaSistema.resx">
+      <DependentUpon>CargaSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmDatosEmpresa.resx">
+      <DependentUpon>frmDatosEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frnPrincipal.es.resx">
+      <DependentUpon>frnPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frnPrincipal.resx">
+      <DependentUpon>frnPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Grids\frmListaEmpresas.resx">
+      <DependentUpon>frmListaEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Procesos\frmProcesosAPO.resx">
+      <DependentUpon>frmProcesosAPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Procesos\frmProcesosBAI.resx">
+      <DependentUpon>frmProcesosBAI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Procesos\frmProcesosDSS.resx">
+      <DependentUpon>frmProcesosDSS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Procesos\frmProcesosEDM.resx">
+      <DependentUpon>frmProcesosEDM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Procesos\frmProcesosMEA.resx">
+      <DependentUpon>frmProcesosMEA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRellenarEmpresa.resx">
       <DependentUpon>frmRellenarEmpresa.cs</DependentUpon>
@@ -144,6 +236,7 @@
     <EmbeddedResource Include="Procesos\frmNivelesProceso.resx">
       <DependentUpon>frmNivelesProceso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
