@@ -38,7 +38,7 @@ namespace Cobit_5.Procesos
             }
         }
         private void btnN1_Click(object sender, EventArgs e){
-            if ( nivelActual.StartsWith("Nivel 1") || nivelActual.StartsWith("Nivel 2") ||
+            if (nivelActual.StartsWith("Nivel 0") || nivelActual.StartsWith("Nivel 1") || nivelActual.StartsWith("Nivel 2") ||
                 nivelActual.StartsWith("Nivel 3") || nivelActual.StartsWith("Nivel 4") || nivelActual.StartsWith("Nivel 5"))
             { }
             else
@@ -84,7 +84,8 @@ namespace Cobit_5.Procesos
         }
         private void btN2_Click(object sender, EventArgs e)
         {
-            if ( nivelActual.StartsWith("Nivel 2") ||nivelActual.StartsWith("Nivel 3") || nivelActual.StartsWith("Nivel 4") || nivelActual.StartsWith("Nivel 5"))
+            if (nivelActual.StartsWith("Nivel 1") || nivelActual.StartsWith("Nivel 2") ||
+                nivelActual.StartsWith("Nivel 3") || nivelActual.StartsWith("Nivel 4") || nivelActual.StartsWith("Nivel 5"))
             { }
             else
             {
@@ -128,7 +129,8 @@ namespace Cobit_5.Procesos
             txtPropositoNivel.Text = dNivel.ObtenerPropositoXNivel(2);
         }
         private void btnN4_Click(object sender, EventArgs e){
-            if ( nivelActual.StartsWith("Nivel 4") || nivelActual.StartsWith("Nivel 5"))
+            if (
+                nivelActual.StartsWith("Nivel 3") || nivelActual.StartsWith("Nivel 4") || nivelActual.StartsWith("Nivel 5"))
             { }
             else
             {
@@ -173,14 +175,6 @@ namespace Cobit_5.Procesos
         }
         private void btnN0_Click(object sender, EventArgs e)
         {
-            if (nivelActual.StartsWith("Nivel 0") || nivelActual.StartsWith("Nivel 1") || nivelActual.StartsWith("Nivel 2") ||
-            nivelActual.StartsWith("Nivel 3") || nivelActual.StartsWith("Nivel 4") || nivelActual.StartsWith("Nivel 5"))
-            { }
-                else
-            {
-                MessageBox.Show("Debe rellenar los niveles anteriores", "Accion Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
             D_Nivel dNivel = new D_Nivel();
             int IdNivel = D_Nivel.obtenerIdnivelXEmp("Nivel 0", idProceso);
             listCrit.Clear();
@@ -219,7 +213,8 @@ namespace Cobit_5.Procesos
         }
         private void btN3_Click(object sender, EventArgs e)
         {
-            if (nivelActual.StartsWith("Nivel 3") || nivelActual.StartsWith("Nivel 4") || nivelActual.StartsWith("Nivel 5"))
+            if ( nivelActual.StartsWith("Nivel 2") ||
+                nivelActual.StartsWith("Nivel 3") || nivelActual.StartsWith("Nivel 4") || nivelActual.StartsWith("Nivel 5"))
             { }
             else
             {
@@ -263,7 +258,7 @@ namespace Cobit_5.Procesos
             txtPropositoNivel.Text = dNivel.ObtenerPropositoXNivel(3);
         }
         private void btnN5_Click(object sender, EventArgs e){
-            if ( nivelActual.StartsWith("Nivel 5"))
+            if ( nivelActual.StartsWith("Nivel 4") || nivelActual.StartsWith("Nivel 5"))
             { }
             else
             {
@@ -413,6 +408,8 @@ namespace Cobit_5.Procesos
            if (met.AddOrUpdateRangeObj(critsEmp,new Software3Entities()))
            {
                MessageBox.Show("Se guardo correctamente", "Accion Correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               nivelActual =
+                   D_Nivel.obtenerUltimoNivel(txtIdentificador.Text, IdEmpresa);
            }
            else
            {

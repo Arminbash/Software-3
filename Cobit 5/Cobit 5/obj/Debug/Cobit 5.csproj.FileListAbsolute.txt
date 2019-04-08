@@ -53,3 +53,4 @@ C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5
 C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\es\Cobit 5.resources.dll
 C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.exe
 C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.pdb
+C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.csprojResolveAssemblyReference.cache
