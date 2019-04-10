@@ -28,6 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SeriesPoint seriesPoint7 = new DevExpress.XtraCharts.SeriesPoint("Nivel 0", new object[] {
+            ((object)(10D))});
+            DevExpress.XtraCharts.SeriesPoint seriesPoint8 = new DevExpress.XtraCharts.SeriesPoint("Nivel 1", new object[] {
+            ((object)(20D))});
+            DevExpress.XtraCharts.SeriesPoint seriesPoint9 = new DevExpress.XtraCharts.SeriesPoint("Nivel 2", new object[] {
+            ((object)(40D))});
+            DevExpress.XtraCharts.SeriesPoint seriesPoint10 = new DevExpress.XtraCharts.SeriesPoint("Nivel 3", new object[] {
+            ((object)(60D))});
+            DevExpress.XtraCharts.SeriesPoint seriesPoint11 = new DevExpress.XtraCharts.SeriesPoint("Nivel 4", new object[] {
+            ((object)(80D))});
+            DevExpress.XtraCharts.SeriesPoint seriesPoint12 = new DevExpress.XtraCharts.SeriesPoint("Nivel 5", new object[] {
+            ((object)(100D))});
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.grdcProcesos = new DevExpress.XtraGrid.GridControl();
@@ -40,8 +54,12 @@
             this.colN3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colN4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colN5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.chartDatos = new DevExpress.XtraCharts.ChartControl();
             ((System.ComponentModel.ISupportInitialize)(this.grdcProcesos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdProcesos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,6 +109,7 @@
             this.grdProcesos.OptionsBehavior.AutoExpandAllGroups = true;
             this.grdProcesos.OptionsBehavior.Editable = false;
             this.grdProcesos.OptionsFind.AlwaysVisible = true;
+            this.grdProcesos.Click += new System.EventHandler(this.grdProcesos_Click);
             this.grdProcesos.DoubleClick += new System.EventHandler(this.grdProcesos_DoubleClick);
             // 
             // colidProceso
@@ -157,12 +176,39 @@
             this.colN5.Visible = true;
             this.colN5.VisibleIndex = 7;
             // 
+            // chartDatos
+            // 
+            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartDatos.Diagram = xyDiagram2;
+            this.chartDatos.Location = new System.Drawing.Point(17, 408);
+            this.chartDatos.Name = "chartDatos";
+            series2.Name = "Serie1";
+            seriesPoint7.ColorSerializable = "Red";
+            seriesPoint8.ColorSerializable = "Fuchsia";
+            seriesPoint9.ColorSerializable = "Blue";
+            seriesPoint10.ColorSerializable = "#FF8040";
+            seriesPoint11.ColorSerializable = "Green";
+            seriesPoint12.ColorSerializable = "#0080FF";
+            series2.Points.AddRange(new DevExpress.XtraCharts.SeriesPoint[] {
+            seriesPoint7,
+            seriesPoint8,
+            seriesPoint9,
+            seriesPoint10,
+            seriesPoint11,
+            seriesPoint12});
+            this.chartDatos.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series2};
+            this.chartDatos.Size = new System.Drawing.Size(793, 331);
+            this.chartDatos.TabIndex = 9;
+            // 
             // frmProcesosAPO
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(831, 599);
+            this.ClientSize = new System.Drawing.Size(823, 750);
+            this.Controls.Add(this.chartDatos);
             this.Controls.Add(this.grdcProcesos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -172,6 +218,9 @@
             this.Load += new System.EventHandler(this.frmProcesosAPO_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdcProcesos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdProcesos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +240,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colN3;
         private DevExpress.XtraGrid.Columns.GridColumn colN4;
         private DevExpress.XtraGrid.Columns.GridColumn colN5;
+        private DevExpress.XtraCharts.ChartControl chartDatos;
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Cobit_5.Clases_Modelo;
 using Cobit_5.Metodos;
 using Cobit_5.Procesos;
+using DevExpress.XtraCharts;
 using DevExpress.XtraEditors;
 
 namespace Cobit_5.Formularios.Procesos
@@ -43,6 +44,23 @@ namespace Cobit_5.Formularios.Procesos
                     D_Nivel.obtenerUltimoNivel((string)grdProcesos.GetFocusedRowCellValue(colidProceso), idEmpresa);
                 nvProc.ShowDialog(this);
             }
+        }
+        private void actualizarGrafico()
+        {
+            chartDatos.Series[0].Points.Clear(); foreach (var x in D_Procesos.obtenerPorcentajesXStr((string)grdProcesos.GetFocusedRowCellValue(colidProceso), idEmpresa))
+            {
+                SeriesPoint series = new SeriesPoint();
+                series.Argument = x.nomNivel;
+                double[] items2 = { (double)x.puntaje };
+                series.Values = items2;
+                chartDatos.Series[0].Points.Add(series);
+            }
+
+
+        }
+        private void grdProcesos_Click(object sender, EventArgs e)
+        {
+            actualizarGrafico();
         }
     }
 }

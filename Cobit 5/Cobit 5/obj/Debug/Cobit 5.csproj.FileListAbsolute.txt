@@ -26,31 +26,3 @@ C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Prop
 C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.csproj.GenerateResource.Cache
 C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.exe
 C:\Users\User\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.pdb
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\Cobit 5.exe.config
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\Cobit 5.exe
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\Cobit 5.pdb
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\es\Cobit 5.resources.dll
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\EntityFramework.dll
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\EntityFramework.xml
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Formularios.CargaSistema.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Formularios.frmDatosEmpresa.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Formularios.frnPrincipal.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Formularios.Grids.frmListaEmpresas.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Formularios.Procesos.frmProcesosAPO.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Formularios.Procesos.frmProcesosBAI.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Formularios.Procesos.frmProcesosDSS.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Formularios.frmProcesosEDM.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Formularios.Procesos.frmProcesosMEA.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.frmRellenarEmpresa.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Procesos.frmListaProcesos.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Procesos.frmNivelesProceso.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Properties.Resources.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit_5.Formularios.frnPrincipal.es.resources
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.csproj.GenerateResource.Cache
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.exe.licenses
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\es\Cobit 5.resources.dll
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.exe
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.pdb
-C:\Users\Arminbash\Documents\GitHub\Software-3\Cobit 5\Cobit 5\obj\Debug\Cobit 5.csprojResolveAssemblyReference.cache

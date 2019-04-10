@@ -38,5 +38,41 @@ namespace Cobit_5.Metodos
                return query;
            }
        }
+
+       public class objTemp
+       {
+           public string nomNivel { get; set; }
+           public decimal puntaje { get; set; }
+       }
+
+       public static List<objTemp> obtenerPorcentajesXStr(string txt, int idEmpresa)
+       {
+           using (Software3Entities context = new Software3Entities())
+           {
+ var query = (from proc in context.Proceso
+                   join niv in context.Nivel on proc.Id equals niv.IdProceso
+                   where proc.CodigoProceso.StartsWith(txt)select new objTemp
+                   {
+                     nomNivel= niv.CodigoNivel,puntaje = ((from crit in context.Criterio join 
+                                                  critEmp in context.CriterioEmpresa on crit.Id equals critEmp.IdCriterio
+                                              where crit.IdNivel == niv.Id && critEmp.IdEmpresa == idEmpresa
+                                              select critEmp).Sum(x => x.NoConseguido+x.ParteConseguido+x.Parcialmente+x.Totalidad)  /
+                                          (from crit in context.Criterio join 
+                                                  critEmp in context.CriterioEmpresa on crit.Id equals critEmp.IdCriterio
+                                              where crit.IdNivel == niv.Id && critEmp.IdEmpresa == idEmpresa
+                                           select critEmp).Count()) == null ? 0 :(decimal) ((from crit in context.Criterio
+                                                                                       join
+                                                                                           critEmp in context.CriterioEmpresa on crit.Id equals critEmp.IdCriterio
+                                                                                       where crit.IdNivel == niv.Id && critEmp.IdEmpresa == idEmpresa
+                                                                                       select critEmp).Sum(x => x.NoConseguido + x.ParteConseguido + x.Parcialmente + x.Totalidad) /
+                                                                                   (from crit in context.Criterio
+                                                                                       join
+                                                                                           critEmp in context.CriterioEmpresa on crit.Id equals critEmp.IdCriterio
+                                                                                       where crit.IdNivel == niv.Id && critEmp.IdEmpresa == idEmpresa
+                                                                                       select critEmp).Count()) 
+                   }).ToList();
+               return query;
+             }
+       }
     }
 }
