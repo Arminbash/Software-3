@@ -60,7 +60,6 @@ namespace Cobit_5.Formularios.Procesos
         }
         private void grdProcesos_Click(object sender, EventArgs e)
         {
-            actualizarGrafico();
-        }
+            actualizarGrafico();}
     }
 }
